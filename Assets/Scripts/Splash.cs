@@ -1,61 +1,50 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class StardewSplash : MonoBehaviour
 {
-    [Header("Background Scroll")]
-    public float scrollSpeed = 50f;      // speed of scrolling
-    public float scrollDistance = 300f;  // how far it moves
-
-    [Header("Logo Fade")]
-    public CanvasGroup logo;             // assign your logo (UI Image) here
+    public RectTransform background;  // Assign your UI Image here
+    public CanvasGroup logo;          // Assign logo CanvasGroup
+    public float scrollSpeed = 50f;   // pixels per second
+    public float scrollDistance = 500f; // how far to move (in pixels)
     public float fadeDuration = 1.5f;
-    public float logoStayTime = 2f;
+    public float logoDuration = 2f;
 
-    [Header("Fade to Black")]
-    public CanvasGroup fadePanel;        // full-screen black panel
-    public float fadeOutDuration = 1.5f;
-
-    [Header("Scene Change")]
-    public string nextScene = "MainMenu";
-
-    private RectTransform bg;
-    private float traveled = 0f;
+    private Vector2 startPos;
 
     void Start()
     {
-        bg = GetComponent<RectTransform>();
+        startPos = background.anchoredPosition;
         StartCoroutine(PlaySequence());
     }
 
     IEnumerator PlaySequence()
     {
-        // --- Scroll background upward ---
+        float traveled = 0f;
+
+        // Scroll upwards
         while (traveled < scrollDistance)
         {
             float move = scrollSpeed * Time.deltaTime;
-            bg.anchoredPosition += new Vector2(0, -move); // -move = upward in UI space
+            background.anchoredPosition += new Vector2(0, -move); // move UP
             traveled += move;
             yield return null;
         }
 
-        // --- Show logo ---
+        // Show logo
         yield return StartCoroutine(FadeCanvasGroup(logo, 0, 1, fadeDuration));
-        yield return new WaitForSeconds(logoStayTime);
+        yield return new WaitForSeconds(logoDuration);
         yield return StartCoroutine(FadeCanvasGroup(logo, 1, 0, fadeDuration));
 
-        // --- Fade to black ---
-        yield return StartCoroutine(FadeCanvasGroup(fadePanel, 0, 1, fadeOutDuration));
-
-        // --- Load next scene ---
-        SceneManager.LoadScene(nextScene);
+        // After splash → Load MainMenu (or enable it in-scene)
+        SceneManager.LoadScene("MainMenu");
     }
 
     IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float duration)
     {
-        float t = 0f;
+        float t = 0;
         cg.alpha = start;
         while (t < duration)
         {

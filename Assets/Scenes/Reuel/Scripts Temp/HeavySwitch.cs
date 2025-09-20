@@ -1,16 +1,13 @@
 using UnityEngine;
 
-public class BoxNSwitch : MonoBehaviour
+public class HeavySwitch : MonoBehaviour
 {
     
     public GameObject HeavyBox;
-    public GameObject LightBox;
     private Rigidbody2D[] hbArray;
-    private Rigidbody2D[] lbArray;
     private bool isSwitchFlipped = false;
     private int heavyBCount;
-    private int lightBCount;
-    //private Tag switchtag;
+  
 
      //Interface
     public Collider2D player;
@@ -19,7 +16,7 @@ public class BoxNSwitch : MonoBehaviour
     void Start()
     {
         heavyBCount = HeavyBox.transform.childCount;
-        lightBCount = LightBox.transform.childCount;
+     
         hbToArray();
         
     }
@@ -29,7 +26,7 @@ public class BoxNSwitch : MonoBehaviour
     {
         if(playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-           deciderSwitch();
+           heavyBox();
         }        
     }
 
@@ -56,15 +53,6 @@ public class BoxNSwitch : MonoBehaviour
     }
 
 
-    void deciderSwitch()
-    {
-        if(gameObject.CompareTag("HeavySwitch")){
-            heavyBox();
-        }else if(gameObject.CompareTag("LightSwitch")){
-            lightBox();
-        }
-    }
-
     void heavyBox()
     {
        isSwitchFlipped = !isSwitchFlipped; 
@@ -86,19 +74,6 @@ public class BoxNSwitch : MonoBehaviour
         }
     }
 
-    void lightBox()
-    {
-        /*isSwitchFlipped = !isSwitchFlipped; 
-        if(isSwitchFlipped)
-        {
-         
-            lightRB.gravityScale = -1f;
-        
-        }else if(!isSwitchFlipped)
-         {
-          
-            lightRB.gravityScale = 1f;
-         }*/
-    }
+  
     
 }

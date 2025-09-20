@@ -1,0 +1,638 @@
+fileFormatVersion: 2
+guid: 98067bcf401cc8b4bbe341d9f83022f3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8148710467881143507
+    second: Engineer Sprite Sheet 1_0
+  - first:
+      213: 4201472892808485432
+    second: Engineer Sprite Sheet 1_1
+  - first:
+      213: -7504424117398597647
+    second: Engineer Sprite Sheet 1_2
+  - first:
+      213: -12047517811142495
+    second: Engineer Sprite Sheet 1_3
+  - first:
+      213: 7120077864696863681
+    second: Engineer Sprite Sheet 1_4
+  - first:
+      213: 5071551475856658925
+    second: Engineer Sprite Sheet 1_5
+  - first:
+      213: -8812338766110027734
+    second: Engineer Sprite Sheet 1_6
+  - first:
+      213: -5079567819373622065
+    second: Engineer Sprite Sheet 1_7
+  - first:
+      213: -8036595348045908524
+    second: Engineer Sprite Sheet 1_8
+  - first:
+      213: 5546675060712402604
+    second: Engineer Sprite Sheet 1_9
+  - first:
+      213: -7125057739776790373
+    second: Engineer Sprite Sheet 1_10
+  - first:
+      213: 1225445280745901530
+    second: Engineer Sprite Sheet 1_11
+  - first:
+      213: -8710709245359905866
+    second: Engineer Sprite Sheet 1_12
+  - first:
+      213: -7970320944838386700
+    second: Engineer Sprite Sheet 1_13
+  - first:
+      213: -2688222636079567785
+    second: Engineer Sprite Sheet 1_14
+  - first:
+      213: -1581245311342603905
+    second: Engineer Sprite Sheet 1_15
+  - first:
+      213: 2776166641746208913
+    second: Engineer Sprite Sheet 1_16
+  - first:
+      213: -6830640603241090141
+    second: Engineer Sprite Sheet 1_17
+  - first:
+      213: -4727038775323877893
+    second: Engineer Sprite Sheet 1_18
+  - first:
+      213: 4870238586043977798
+    second: Engineer Sprite Sheet 1_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_0
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1767
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23ff60d007f9ee80800000000000000
+      internalID: -8148710467881143507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_1
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1767
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83a584de551ae4a30800000000000000
+      internalID: 4201472892808485432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_2
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1767
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff059e760eead790800000000000000
+      internalID: -7504424117398597647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_3
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 1767
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a0117ca8d235dff0800000000000000
+      internalID: -12047517811142495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_4
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 639
+        width: 122
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cbd06a18199fc260800000000000000
+      internalID: 7120077864696863681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_5
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 639
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de15b827235c16640800000000000000
+      internalID: 5071551475856658925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_6
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 639
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a209b9df49844b580800000000000000
+      internalID: -8812338766110027734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_7
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 639
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcccab12bffb189b0800000000000000
+      internalID: -5079567819373622065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_8
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 639
+        width: 122
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d5ba245c17487090800000000000000
+      internalID: -8036595348045908524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_9
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 639
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caee746849fb9fc40800000000000000
+      internalID: 5546675060712402604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_10
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 639
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b90f4706cb5be1d90800000000000000
+      internalID: -7125057739776790373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_11
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 639
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: addc98a7df7a10110800000000000000
+      internalID: 1225445280745901530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_12
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 485
+        width: 122
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b3ac98b7185d1780800000000000000
+      internalID: -8710709245359905866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_13
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 485
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fb5d09445bb36190800000000000000
+      internalID: -7970320944838386700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_14
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 485
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75c205b51c381bad0800000000000000
+      internalID: -2688222636079567785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_15
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 485
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f711ca264c94e0ae0800000000000000
+      internalID: -1581245311342603905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_16
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 485
+        width: 122
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19862961adce68620800000000000000
+      internalID: 2776166641746208913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_17
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 485
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a37477cf80b431a0800000000000000
+      internalID: -6830640603241090141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_18
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 485
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd925d574f266eb0800000000000000
+      internalID: -4727038775323877893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engineer Sprite Sheet 1_19
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 485
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6405d8cb030969340800000000000000
+      internalID: 4870238586043977798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 80ae4b02db772754d9aaeba35d61870b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Engineer Sprite Sheet 1_0: -8148710467881143507
+      Engineer Sprite Sheet 1_1: 4201472892808485432
+      Engineer Sprite Sheet 1_10: -7125057739776790373
+      Engineer Sprite Sheet 1_11: 1225445280745901530
+      Engineer Sprite Sheet 1_12: -8710709245359905866
+      Engineer Sprite Sheet 1_13: -7970320944838386700
+      Engineer Sprite Sheet 1_14: -2688222636079567785
+      Engineer Sprite Sheet 1_15: -1581245311342603905
+      Engineer Sprite Sheet 1_16: 2776166641746208913
+      Engineer Sprite Sheet 1_17: -6830640603241090141
+      Engineer Sprite Sheet 1_18: -4727038775323877893
+      Engineer Sprite Sheet 1_19: 4870238586043977798
+      Engineer Sprite Sheet 1_2: -7504424117398597647
+      Engineer Sprite Sheet 1_20: -1367988190
+      Engineer Sprite Sheet 1_3: -12047517811142495
+      Engineer Sprite Sheet 1_4: 7120077864696863681
+      Engineer Sprite Sheet 1_5: 5071551475856658925
+      Engineer Sprite Sheet 1_6: -8812338766110027734
+      Engineer Sprite Sheet 1_7: -5079567819373622065
+      Engineer Sprite Sheet 1_8: -8036595348045908524
+      Engineer Sprite Sheet 1_9: 5546675060712402604
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

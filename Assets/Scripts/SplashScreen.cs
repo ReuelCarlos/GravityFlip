@@ -27,6 +27,11 @@ public class SplashScreen : MonoBehaviour
     public float fadeDuration = 1.5f;
     public float logoDuration = 2f;
 
+    [Header("Bobbing Settings")]
+    public float bobSpeed = 2f;   // How fast the bobbing cycles
+    public float bobHeight = 10f; // How high the bobbing goes
+    public bool randomizeOffset = true; // Whether each sprite bobs uniquely
+
     private Vector2 bgStartPos;
 
     private void Start()
@@ -56,79 +61,30 @@ public class SplashScreen : MonoBehaviour
         whitePanel.alpha = 1;
         devLogo.alpha = 0;
 
-        RectTransform devLogoRT = devLogo.GetComponent<RectTransform>();
-        Vector2 originalPos = devLogoRT.anchoredPosition;
+        // Fade in/out dev logo
+        yield return StartCoroutine(FadeCanvasGroup(devLogo, 0, 1, fadeDuration));
+        yield return new WaitForSeconds(logoDuration);
+        yield return StartCoroutine(FadeCanvasGroup(devLogo, 1, 0, fadeDuration));
 
-        float bobAmplitude = 10f;   // how high it bobs
-        float bobFrequency = 2f;    // how fast it bobs
-
-        // --- Fade in + eased bobbing ---
-        float t = 0;
-        while (t < fadeDuration)
-        {
-            t += Time.deltaTime;
-            float progress = t / fadeDuration;
-
-            devLogo.alpha = Mathf.Lerp(0, 1, progress);
-
-            // Ease in bobbing amplitude (starts flat, grows into full bob)
-            float easedAmplitude = bobAmplitude * Mathf.SmoothStep(0f, 1f, progress);
-            float yOffset = Mathf.Sin(Time.time * bobFrequency) * easedAmplitude;
-            devLogoRT.anchoredPosition = originalPos + new Vector2(0, yOffset);
-
-            yield return null;
-        }
-        devLogo.alpha = 1;
-
-        // --- Bob naturally during full logo duration ---
-        float elapsed = 0;
-        while (elapsed < logoDuration)
-        {
-            elapsed += Time.deltaTime;
-
-            float yOffset = Mathf.Sin(Time.time * bobFrequency) * bobAmplitude;
-            devLogoRT.anchoredPosition = originalPos + new Vector2(0, yOffset);
-
-            yield return null;
-        }
-
-        // --- Fade out + ease out bobbing ---
-        t = 0;
-        while (t < fadeDuration)
-        {
-            t += Time.deltaTime;
-            float progress = t / fadeDuration;
-
-            devLogo.alpha = Mathf.Lerp(1, 0, progress);
-
-            // Ease OUT bobbing amplitude (shrinks back to flat)
-            float easedAmplitude = bobAmplitude * (1f - Mathf.SmoothStep(0f, 1f, progress));
-            float yOffset = Mathf.Sin(Time.time * bobFrequency) * easedAmplitude;
-            devLogoRT.anchoredPosition = originalPos + new Vector2(0, yOffset);
-
-            yield return null;
-        }
-        devLogo.alpha = 0;
-
-        // Reset position
-        devLogoRT.anchoredPosition = originalPos;
-
-        // --- Fade out white panel ---
+        // Fade out white panel
         yield return StartCoroutine(FadeCanvasGroup(whitePanel, 1, 0, fadeDuration));
 
-        // --- Switch to title panel ---
+        // Switch panels
         splashPanel.SetActive(false);
         titlePanel.SetActive(true);
 
-        // Fade in entire title screen
+        // Fade in entire title screen instantly (no delay)
         yield return StartCoroutine(FadeCanvasGroup(titleCanvasGroup, 0, 1, fadeDuration));
 
-        // Sprites appear immediately
+        // Sprites appear immediately with bobbing
         spriteContainer.SetActive(true);
         foreach (Transform child in spriteContainer.transform)
+        {
             StartCoroutine(PopAnimation(child));
+            StartCoroutine(BobAnimation(child));
+        }
 
-        // --- Scroll background before title logo ---
+        // Scroll background fully before title logo
         float traveled = 0f;
         background.anchoredPosition = bgStartPos;
         while (traveled < scrollDistance)
@@ -139,10 +95,10 @@ public class SplashScreen : MonoBehaviour
             yield return null;
         }
 
-        // --- Drop in title logo ---
+        // After scroll finishes → title logo drop in
         yield return StartCoroutine(SlideAndFadeIn(titleLogo, new Vector2(0, 200), Vector2.zero, fadeDuration));
 
-        // --- Fade in menu panel ---
+        // Then menu panel fades in
         yield return StartCoroutine(FadeCanvasGroup(menuPanel, 0, 1, fadeDuration));
     }
 
@@ -196,5 +152,18 @@ public class SplashScreen : MonoBehaviour
         }
 
         obj.localScale = originalScale;
+    }
+
+    IEnumerator BobAnimation(Transform obj)
+    {
+        Vector3 startPos = obj.localPosition;
+        float offset = randomizeOffset ? Random.Range(0f, Mathf.PI * 2) : 0f;
+
+        while (true)
+        {
+            float y = Mathf.Sin(Time.time * bobSpeed + offset) * bobHeight;
+            obj.localPosition = startPos + new Vector3(0, y, 0);
+            yield return null;
+        }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4152707351222832645}
   - component: {fileID: 9210772098219585989}
   - component: {fileID: 2300309129349663081}
+  - component: {fileID: 2533745131565891098}
   m_Layer: 0
   m_Name: LightBox (1)
   m_TagString: rLightBox
@@ -114,7 +115,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
 --- !u!61 &2300309129349663081
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -161,6 +162,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1818360609 &2533745131565891098
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094665790892521735}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_Active: 1
+  m_IsLocked: 0
+  m_Sources:
+  - sourceTransform: {fileID: 0}
+    weight: 1
 --- !u!1 &5377857044423702756
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +229,7 @@ GameObject:
   - component: {fileID: 2147021043396503516}
   - component: {fileID: 2517054116409648070}
   - component: {fileID: 5368910314745425143}
+  - component: {fileID: 244379464999199967}
   m_Layer: 0
   m_Name: LightBox
   m_TagString: rLightBox
@@ -309,7 +331,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
 --- !u!61 &5368910314745425143
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -356,6 +378,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1818360609 &244379464999199967
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412338075557289618}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_Active: 1
+  m_IsLocked: 0
+  m_Sources:
+  - sourceTransform: {fileID: 0}
+    weight: 1
 --- !u!1 &6246461168082230111
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +411,7 @@ GameObject:
   - component: {fileID: 3652647545832432009}
   - component: {fileID: 8935667425751442358}
   - component: {fileID: 182710833560035449}
+  - component: {fileID: 8373453466650370645}
   m_Layer: 0
   m_Name: LightBox (2)
   m_TagString: rLightBox
@@ -470,7 +513,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
 --- !u!61 &182710833560035449
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -517,3 +560,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1818360609 &8373453466650370645
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6246461168082230111}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_Active: 1
+  m_IsLocked: 0
+  m_Sources:
+  - sourceTransform: {fileID: 0}
+    weight: 1

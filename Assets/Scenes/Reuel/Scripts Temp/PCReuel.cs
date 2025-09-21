@@ -33,9 +33,14 @@ public class PCReuel : MonoBehaviour
 
     //Interface of Box
     private bool boxInRange = false;
-
+    private GameObject box;
     void Update()
     {
+        // Moving of Box
+        if(boxInRange && Input.GetKey(KeyCode.E))
+        {
+            box.GetComponent<Rigidbody2D>().constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+        }
         // ---------------- MOVEMENT ----------------
         float inputX = Input.GetAxisRaw("Horizontal");
         targetSpeed = inputX * moveSpeed;
@@ -119,8 +124,9 @@ public class PCReuel : MonoBehaviour
 
         if(other.gameObject.CompareTag("rHeavyBox") || other.gameObject.CompareTag("gHeavyBox") || other.gameObject.CompareTag("gLightBox") || other.gameObject.CompareTag("rLightBox"))
         {
+            box = other.gameObject;
             boxInRange = true;
-            Debug.Log("Entered");
+           
         }
         
     }
@@ -130,7 +136,7 @@ public class PCReuel : MonoBehaviour
         if(other.gameObject.CompareTag("rHeavyBox") || other.gameObject.CompareTag("gHeavyBox") || other.gameObject.CompareTag("gLightBox") || other.gameObject.CompareTag("rLightBox"))
         {
             boxInRange = false;
-            Debug.Log("Left");
+            other.gameObject.GetComponent<Rigidbody2D>().constraints |= RigidbodyConstraints2D.FreezePositionX;
         }
         
     }

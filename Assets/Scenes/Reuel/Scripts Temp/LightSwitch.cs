@@ -17,7 +17,7 @@ public class LightSwitch : MonoBehaviour
     {
         lightBCount = LightBox.transform.childCount;
         lbToArray();
-        
+        fConstraint();
     }
 
     
@@ -61,16 +61,39 @@ public class LightSwitch : MonoBehaviour
        {
             for(int i = 0; i < lightBCount; i++) 
             {
-                lbArray[i].gravityScale = -1f;
+                if(lbArray[i].gameObject.CompareTag("rLightBox"))
+                {
+                    lbArray[i].GetComponent<Rigidbody2D>().gravityScale = -1f;
+                    
+                }else if(lbArray[i].gameObject.CompareTag("gLightBox"))
+                {
+                    lbArray[i].GetComponent<Rigidbody2D>().gravityScale = -1f;
+                }
             }
        
        }else if(!isSwitchFlipped)
         {
             for(int i = 0; i < lightBCount; i++) 
             {
-                lbArray[i].gravityScale = 1f;
+                if(lbArray[i].gameObject.CompareTag("rLightBox"))
+                {
+                    lbArray[i].GetComponent<Rigidbody2D>().gravityScale = 1f;
+                    
+                }else if(lbArray[i].gameObject.CompareTag("gLightBox"))
+                {
+                    lbArray[i].GetComponent<Rigidbody2D>().gravityScale = 1f;
+                }
             }
         }
+    }
+
+    void fConstraint()
+    {
+        for(int i = 0; i < lightBCount; i++) 
+            {
+                
+                lbArray[i].GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+            }
     }
 
   

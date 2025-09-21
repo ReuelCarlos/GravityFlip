@@ -62,15 +62,30 @@ public class HeavySwitch : MonoBehaviour
        {
             for(int i = 0; i < heavyBCount; i++) 
             {
+                if(hbArray[i].gameObject.CompareTag("rHeavyBox"))
+                {
+                    hbArray[i].GetComponent<Rigidbody2D>().gravityScale = -1f;
+                    
+                }else if(hbArray[i].gameObject.CompareTag("gHeavyBox"))
+                {
+                    hbArray[i].GetComponent<Rigidbody2D>().gravityScale = -1f;
+                }
                 
-                hbArray[i].GetComponent<Rigidbody2D>().gravityScale = -1f;
             }
        
        }else if(!isSwitchFlipped)
         {
             for(int i = 0; i < heavyBCount; i++) 
             {
-                hbArray[i].GetComponent<Rigidbody2D>().gravityScale = 1f;
+                if(hbArray[i].gameObject.CompareTag("rHeavyBox"))
+                {
+                    hbArray[i].GetComponent<Rigidbody2D>().gravityScale = 1f;
+                    
+                }else if(hbArray[i].gameObject.CompareTag("gHeavyBox"))
+                {
+                    hbArray[i].GetComponent<Rigidbody2D>().gravityScale = 1f;
+                }
+                
             }
         }
     }
@@ -80,7 +95,7 @@ public class HeavySwitch : MonoBehaviour
         for(int i = 0; i < heavyBCount; i++) 
             {
                 
-                hbArray[i].GetComponent<Rigidbody2D>().RigidbodyConstraints2D.FreezePostionY;
+                hbArray[i].GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
             }
     }
 

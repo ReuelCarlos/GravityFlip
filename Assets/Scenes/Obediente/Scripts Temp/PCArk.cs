@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PCReuel : MonoBehaviour
+public class PCArk : MonoBehaviour
 {
     public float moveSpeed = 8f;
     public float acceleration = 10f;

@@ -2,50 +2,53 @@ using UnityEngine;
 
 public class LightPlate : MonoBehaviour
 {
-    void OnTriggerEnter2D (Collider2D other){
+    public bool isPressed = false;
 
-
-        if(other.gameObject.CompareTag("rLightBox") && gameObject.CompareTag("RedPlate"))
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("rLightBox") && gameObject.CompareTag("RedPlate"))
         {
             pushedRed();
-        }else if(other.gameObject.CompareTag("gLightBox") && gameObject.CompareTag("GreenPlate"))
-         {
+            isPressed = true;
+        }
+        else if (other.gameObject.CompareTag("gLightBox") && gameObject.CompareTag("GreenPlate"))
+        {
             pushedGreen();
-         }
-
-
+            isPressed = true;
+        }
     }
 
-    void OnTriggerExit2D (Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("rLightBox") && gameObject.CompareTag("RedPlate"))
+        if (other.gameObject.CompareTag("rLightBox") && gameObject.CompareTag("RedPlate"))
         {
             removedRed();
-            
-        }else if(other.gameObject.CompareTag("gLightBox") && gameObject.CompareTag("GreenPlate"))
-         {
+            isPressed = false;
+        }
+        else if (other.gameObject.CompareTag("gLightBox") && gameObject.CompareTag("GreenPlate"))
+        {
             removedGreen();
-         }
+            isPressed = false;
+        }
     }
-    void pushedRed ()
+
+    void pushedRed()
     {
         Debug.Log("PUSHED LIGHT RED");
-
     }
-    void pushedGreen ()
+
+    void pushedGreen()
     {
         Debug.Log("PUSHED LIGHT Green");
-
     }
 
-    void removedRed ()
+    void removedRed()
     {
         Debug.Log("LIGHT RED IS GONE");
-
     }
-    void removedGreen ()
+
+    void removedGreen()
     {
         Debug.Log("LIGHT GREEN IS GONE");
-
     }
 }

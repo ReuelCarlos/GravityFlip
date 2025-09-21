@@ -2,54 +2,53 @@ using UnityEngine;
 
 public class HeavyPlate : MonoBehaviour
 {
+    public bool isPressed = false;
 
-
-    void OnTriggerEnter2D (Collider2D other){
-
-
-        if(other.gameObject.CompareTag("rHeavyBox") && gameObject.CompareTag("RedPlate"))
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("rHeavyBox") && gameObject.CompareTag("RedPlate"))
         {
             pushedRed();
-        }else if(other.gameObject.CompareTag("gHeavyBox") && gameObject.CompareTag("GreenPlate"))
-         {
+            isPressed = true;
+        }
+        else if (other.gameObject.CompareTag("gHeavyBox") && gameObject.CompareTag("GreenPlate"))
+        {
             pushedGreen();
-         }
-
-
+            isPressed = true;
+        }
     }
 
-    void OnTriggerExit2D (Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("rHeavyBox") && gameObject.CompareTag("RedPlate"))
+        if (other.gameObject.CompareTag("rHeavyBox") && gameObject.CompareTag("RedPlate"))
         {
             removedRed();
-            
-        }else if(other.gameObject.CompareTag("gHeavyBox") && gameObject.CompareTag("GreenPlate"))
-         {
+            isPressed = false;
+        }
+        else if (other.gameObject.CompareTag("gHeavyBox") && gameObject.CompareTag("GreenPlate"))
+        {
             removedGreen();
-         }
+            isPressed = false;
+        }
     }
-    void pushedRed ()
+
+    void pushedRed()
     {
         Debug.Log("PUSHED HEAVY RED");
-
     }
-    void pushedGreen ()
+
+    void pushedGreen()
     {
         Debug.Log("PUSHED HEAVY Green");
-
     }
 
-    void removedRed ()
+    void removedRed()
     {
         Debug.Log("HEAVY RED IS GONE");
-
     }
-    void removedGreen ()
+
+    void removedGreen()
     {
         Debug.Log("HEAVY GREEN IS GONE");
-
     }
-
-   
 }

@@ -3,102 +3,103 @@ using UnityEngine;
 public class PlayerControllers : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 8f;
-    public float acceleration = 10f;
-    public float deceleration = 15f;
-    public float airControlFactor = 0.6f; // less control in air
-
-    [Header("Jumping")]
+    public float moveSpeed = 5f;
     public float jumpForce = 12f;
-    public float groundCheckDistance = 0.6f;
+
+    [Header("Ground Check")]
+    public Transform groundCheckBottom;  // Place empty GameObject at feet
+    public Transform groundCheckTop;     // Place empty GameObject at head
+    public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
-    [Header("Jump Buffer & Coyote Time")]
-    public float coyoteTime = 0.15f;
-    public float jumpBufferTime = 0.15f;
+    [Header("Jump Timing")]
+    public float coyoteTime = 0.1f;   // grace period after leaving ground
+    public float jumpBufferTime = 0.1f; // buffer for pressing jump early
 
     private Rigidbody2D rb;
     private bool isGrounded;
-    private float coyoteTimeCounter;
-    private float jumpBufferCounter;
-    private float targetSpeed;
-    private float currentSpeed;
+    private float lastGroundedTime;
+    private float lastJumpPressedTime;
 
-    void Start()
+    private float moveInput;
+
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        // ---------------- MOVEMENT ----------------
-        float inputX = Input.GetAxisRaw("Horizontal");
-        targetSpeed = inputX * moveSpeed;
+        // --- Horizontal Movement Input ---
+        moveInput = Input.GetAxisRaw("Horizontal");
 
-        // If airborne, reduce control
-        float accel = isGrounded ? acceleration : acceleration * airControlFactor;
-        float decel = isGrounded ? deceleration : deceleration * airControlFactor;
+        // --- Track Ground State ---
+        CheckGrounded();
 
-        // Smooth speed
-        if (Mathf.Abs(inputX) > 0.01f)
-            currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, accel * Time.deltaTime);
-        else
-            currentSpeed = Mathf.MoveTowards(currentSpeed, 0, decel * Time.deltaTime);
-
-        rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
-
-        // ---------------- GROUND CHECK ----------------
-        Vector2 checkDirection = Physics2D.gravity.normalized;
-        Vector2 origin = (Vector2)transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(origin, checkDirection, groundCheckDistance, groundLayer);
-        isGrounded = hit.collider != null;
-
-        // Coyote Time
         if (isGrounded)
-            coyoteTimeCounter = coyoteTime;
+            lastGroundedTime = Time.time;
+
+        // --- Jump Input ---
+        if (Input.GetButtonDown("Jump")) // Space, W, or UpArrow by default
+            lastJumpPressedTime = Time.time;
+
+        // --- Perform Jump ---
+        if (lastGroundedTime + coyoteTime > Time.time &&
+            lastJumpPressedTime + jumpBufferTime > Time.time)
+        {
+            Jump();
+            lastJumpPressedTime = -999f; // reset
+            lastGroundedTime = -999f;
+        }
+
+        // --- Gravity Flip (example: press "F") ---
+        if (Input.GetKeyDown(KeyCode.F))
+            FlipGravity();
+    }
+
+    void FixedUpdate()
+    {
+        // Apply horizontal movement
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+    }
+
+    void CheckGrounded()
+    {
+        if (Physics2D.gravity.y < 0)
+        {
+            // gravity down → check bottom point
+            isGrounded = Physics2D.OverlapCircle(groundCheckBottom.position, groundCheckRadius, groundLayer);
+        }
         else
-            coyoteTimeCounter -= Time.deltaTime;
-
-        // Jump Buffer
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-            jumpBufferCounter = jumpBufferTime;
-        else
-            jumpBufferCounter -= Time.deltaTime;
-
-        // ---------------- JUMPING ----------------
-        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
         {
-            // Jump opposite gravity
-            Vector2 jumpDir = -Physics2D.gravity.normalized;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // reset vertical velocity
-            rb.AddForce(jumpDir * jumpForce, ForceMode2D.Impulse);
-
-            jumpBufferCounter = 0;
+            // gravity up → check top point
+            isGrounded = Physics2D.OverlapCircle(groundCheckTop.position, groundCheckRadius, groundLayer);
         }
+    }
 
-            // Variable jump height (short hop if released early)
-            if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && !isGrounded)
-        {
-            // Check if moving against gravity (i.e., still rising)
-            if (Vector2.Dot(rb.linearVelocity, -Physics2D.gravity.normalized) > 0)
-            {
-            rb.linearVelocity *= 0.5f; // cut velocity in half
-            }
-        }
+    void Jump()
+    {
+        // Reset vertical velocity before applying jump
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
 
-        // ---------------- FLIP GRAVITY ----------------
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Physics2D.gravity *= -1;
-            transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
-        }
+        // Apply force opposite to gravity
+        Vector2 jumpDir = -Physics2D.gravity.normalized;
+        rb.AddForce(jumpDir * jumpForce, ForceMode2D.Impulse);
+    }
+
+    void FlipGravity()
+    {
+        Physics2D.gravity *= -1; // flip direction
+        transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z); // flip sprite vertically
     }
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Vector2 checkDirection = Physics2D.gravity.normalized;
-        Vector2 origin = (Vector2)transform.position;
-        Gizmos.DrawLine(origin, origin + checkDirection * groundCheckDistance);
+        // Draw overlap circles in scene view for debugging
+        if (groundCheckBottom != null)
+            Gizmos.DrawWireSphere(groundCheckBottom.position, groundCheckRadius);
+
+        if (groundCheckTop != null)
+            Gizmos.DrawWireSphere(groundCheckTop.position, groundCheckRadius);
     }
 }

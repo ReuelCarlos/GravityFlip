@@ -2,18 +2,15 @@ using UnityEngine;
 
 public class PCReuel : MonoBehaviour
 {
-    [Header("Movement")]
     public float moveSpeed = 8f;
     public float acceleration = 10f;
     public float deceleration = 15f;
-    public float airControlFactor = 0.6f; // less control in air
+    public float airControlFactor = 0.6f;
 
-    [Header("Jumping")]
     public float jumpForce = 12f;
     public float groundCheckDistance = 0.6f;
     public LayerMask groundLayer;
 
-    [Header("Jump Buffer & Coyote Time")]
     public float coyoteTime = 0.15f;
     public float jumpBufferTime = 0.15f;
 
@@ -24,43 +21,37 @@ public class PCReuel : MonoBehaviour
     private float targetSpeed;
     private float currentSpeed;
 
-    [Header("Animator")]
     public Animator animator;
+
+    private bool boxInRange = false;
+    private GameObject box;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    //Interface of Box
-    private bool boxInRange = false;
-    private GameObject box;
     void Update()
     {
-        // Moving of Box
-        if(boxInRange && Input.GetKey(KeyCode.E))
+        if (boxInRange && Input.GetKey(KeyCode.E))
         {
             box.GetComponent<Rigidbody2D>().constraints &= ~RigidbodyConstraints2D.FreezePositionX;
         }
-        // ---------------- MOVEMENT ----------------
+
         float inputX = Input.GetAxisRaw("Horizontal");
         targetSpeed = inputX * moveSpeed;
 
-        //Animation
-        //Run
         animator.SetFloat("Speed", Mathf.Abs(inputX));
 
-        //To properflip horizontally
-        if (targetSpeed != 0)//means running
+        if (targetSpeed != 0)
         {
             bool flippers = targetSpeed < 0;
             transform.rotation = Quaternion.Euler(new Vector3(0f, flippers ? 180f : 0f, 0f));
         }
-        
-        // If airborne, reduce control
+
         float accel = isGrounded ? acceleration : acceleration * airControlFactor;
         float decel = isGrounded ? deceleration : deceleration * airControlFactor;
 
-        // Smooth speed
         if (Mathf.Abs(inputX) > 0.01f)
             currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, accel * Time.deltaTime);
         else
@@ -68,47 +59,37 @@ public class PCReuel : MonoBehaviour
 
         rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
 
-        // ---------------- GROUND CHECK ----------------
         Vector2 checkDirection = Physics2D.gravity.normalized;
         Vector2 origin = (Vector2)transform.position;
         RaycastHit2D hit = Physics2D.Raycast(origin, checkDirection, groundCheckDistance, groundLayer);
         isGrounded = hit.collider != null;
 
-        // Coyote Time
         if (isGrounded)
             coyoteTimeCounter = coyoteTime;
         else
             coyoteTimeCounter -= Time.deltaTime;
 
-        // Jump Buffer
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             jumpBufferCounter = jumpBufferTime;
         else
             jumpBufferCounter -= Time.deltaTime;
 
-        // ---------------- JUMPING ----------------
         if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
         {
-            // Jump opposite gravity
             Vector2 jumpDir = -Physics2D.gravity.normalized;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // reset vertical velocity
-            rb.AddForce(jumpDir * jumpForce, ForceMode2D.Impulse);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+            rb.linearVelocity += jumpDir * jumpForce;
 
             jumpBufferCounter = 0;
         }
 
-            // Variable jump height (short hop if released early)
-            if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && !isGrounded)
+        if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && !isGrounded)
         {
-            // Check if moving against gravity (i.e., still rising)
             if (Vector2.Dot(rb.linearVelocity, -Physics2D.gravity.normalized) > 0)
             {
-            rb.linearVelocity *= 0.5f; // cut velocity in half
+                rb.linearVelocity *= 0.5f;
             }
         }
-
-
-        
     }
 
     void OnDrawGizmosSelected()
@@ -119,25 +100,21 @@ public class PCReuel : MonoBehaviour
         Gizmos.DrawLine(origin, origin + checkDirection * groundCheckDistance);
     }
 
-    void OnCollisionEnter2D (Collision2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-
-        if(other.gameObject.CompareTag("rHeavyBox") || other.gameObject.CompareTag("gHeavyBox") || other.gameObject.CompareTag("gLightBox") || other.gameObject.CompareTag("rLightBox"))
+        if (other.gameObject.CompareTag("rHeavyBox") || other.gameObject.CompareTag("gHeavyBox") || other.gameObject.CompareTag("gLightBox") || other.gameObject.CompareTag("rLightBox"))
         {
             box = other.gameObject;
             boxInRange = true;
-           
         }
-        
     }
 
-    void OnCollisionExit2D (Collision2D other)
+    void OnCollisionExit2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("rHeavyBox") || other.gameObject.CompareTag("gHeavyBox") || other.gameObject.CompareTag("gLightBox") || other.gameObject.CompareTag("rLightBox"))
+        if (other.gameObject.CompareTag("rHeavyBox") || other.gameObject.CompareTag("gHeavyBox") || other.gameObject.CompareTag("gLightBox") || other.gameObject.CompareTag("rLightBox"))
         {
             boxInRange = false;
             other.gameObject.GetComponent<Rigidbody2D>().constraints |= RigidbodyConstraints2D.FreezePositionX;
         }
-        
     }
 }

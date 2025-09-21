@@ -2,43 +2,54 @@ using UnityEngine;
 
 public class HeavyPlate : MonoBehaviour
 {
-    private Renderer heavyBoxColor;
-    private GameObject heavyBox;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-            
-    }
 
 
-    void OnTriggerEnter2d (Collider other){
+    void OnTriggerEnter2D (Collider2D other){
 
 
-
-        if(other.CompareTag("HeavyBox"))
+        if(other.gameObject.CompareTag("rHeavyBox") && gameObject.CompareTag("RedPlate"))
         {
-            pushedPlate();
-        }else{
-
-        }
+            pushedRed();
+        }else if(other.gameObject.CompareTag("gHeavyBox") && gameObject.CompareTag("GreenPlate"))
+         {
+            pushedGreen();
+         }
 
 
     }
-    void pushedPlate ()
+
+    void OnTriggerExit2D (Collider2D other)
     {
-        Debug.Log("PUSHED HEAVY");
-
+        if(other.gameObject.CompareTag("rHeavyBox") && gameObject.CompareTag("RedPlate"))
+        {
+            removedRed();
+            
+        }else if(other.gameObject.CompareTag("gHeavyBox") && gameObject.CompareTag("GreenPlate"))
+         {
+            removedGreen();
+         }
     }
-
-    void invalidPush ()
+    void pushedRed ()
     {
-        Debug.Log("PUSHED Too Light");
+        Debug.Log("PUSHED HEAVY RED");
 
     }
+    void pushedGreen ()
+    {
+        Debug.Log("PUSHED HEAVY Green");
+
+    }
+
+    void removedRed ()
+    {
+        Debug.Log("HEAVY RED IS GONE");
+
+    }
+    void removedGreen ()
+    {
+        Debug.Log("HEAVY GREEN IS GONE");
+
+    }
+
+   
 }

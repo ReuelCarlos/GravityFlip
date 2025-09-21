@@ -4,7 +4,7 @@ public class HeavySwitch : MonoBehaviour
 {
     
     public GameObject HeavyBox;
-    private Rigidbody2D[] hbArray;
+    private GameObject[] hbArray;
     private bool isSwitchFlipped = false;
     private int heavyBCount;
   
@@ -18,7 +18,7 @@ public class HeavySwitch : MonoBehaviour
         heavyBCount = HeavyBox.transform.childCount;
      
         hbToArray();
-        
+        fConstraint();
     }
 
     
@@ -32,10 +32,10 @@ public class HeavySwitch : MonoBehaviour
 
     void hbToArray(){
         
-        hbArray = new Rigidbody2D[heavyBCount];
+        hbArray = new GameObject[heavyBCount];
         for(int i = 0; i < heavyBCount; i++) 
         {
-            hbArray[i] = HeavyBox.transform.GetChild(i).gameObject.GetComponent<Rigidbody2D>();
+            hbArray[i] = HeavyBox.transform.GetChild(i).gameObject;
         }
     }
 
@@ -56,22 +56,32 @@ public class HeavySwitch : MonoBehaviour
     void heavyBox()
     {
        isSwitchFlipped = !isSwitchFlipped; 
-       
+        
 
        if(isSwitchFlipped)
        {
             for(int i = 0; i < heavyBCount; i++) 
             {
-                hbArray[i].gravityScale = -1f;
+                
+                hbArray[i].GetComponent<Rigidbody2D>().gravityScale = -1f;
             }
        
        }else if(!isSwitchFlipped)
         {
             for(int i = 0; i < heavyBCount; i++) 
             {
-                hbArray[i].gravityScale = 1f;
+                hbArray[i].GetComponent<Rigidbody2D>().gravityScale = 1f;
             }
         }
+    }
+
+    void fConstraint()
+    {
+        for(int i = 0; i < heavyBCount; i++) 
+            {
+                
+                hbArray[i].GetComponent<Rigidbody2D>().RigidbodyConstraints2D.FreezePostionY;
+            }
     }
 
   

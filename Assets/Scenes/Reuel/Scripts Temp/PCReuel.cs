@@ -31,6 +31,9 @@ public class PCReuel : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    //Interface of Box
+    private bool boxInRange = false;
+
     void Update()
     {
         // ---------------- MOVEMENT ----------------
@@ -99,6 +102,7 @@ public class PCReuel : MonoBehaviour
             }
         }
 
+
         
     }
 
@@ -108,5 +112,26 @@ public class PCReuel : MonoBehaviour
         Vector2 checkDirection = Physics2D.gravity.normalized;
         Vector2 origin = (Vector2)transform.position;
         Gizmos.DrawLine(origin, origin + checkDirection * groundCheckDistance);
+    }
+
+    void OnCollisionEnter2D (Collision2D other)
+    {
+
+        if(other.gameObject.CompareTag("rHeavyBox") || other.gameObject.CompareTag("gHeavyBox") || other.gameObject.CompareTag("gLightBox") || other.gameObject.CompareTag("rLightBox"))
+        {
+            boxInRange = true;
+            Debug.Log("Entered");
+        }
+        
+    }
+
+    void OnCollisionExit2D (Collision2D other)
+    {
+        if(other.gameObject.CompareTag("rHeavyBox") || other.gameObject.CompareTag("gHeavyBox") || other.gameObject.CompareTag("gLightBox") || other.gameObject.CompareTag("rLightBox"))
+        {
+            boxInRange = false;
+            Debug.Log("Left");
+        }
+        
     }
 }

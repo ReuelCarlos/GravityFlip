@@ -15,6 +15,7 @@ TagManager:
   - rHeavyBox
   - gLightBox
   - rLightBox
+  - DoorExit
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Boxes
   - 
   - 
   - 

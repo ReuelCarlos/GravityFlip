@@ -26,21 +26,7 @@ public class DoorController : MonoBehaviour
 
     void Update()
     {
-        bool allPressed = true;
-
-        foreach (GameObject plateObj in plates)
-        {
-            bool pressed = false;
-            LightPlate light = plateObj.GetComponent<LightPlate>();
-            HeavyPlate heavy = plateObj.GetComponent<HeavyPlate>();
-
-            if (light != null) pressed = light.isPressed;
-            else if (heavy != null) pressed = heavy.isPressed;
-
-            if (!pressed) allPressed = false;
-        }
-
-        if (allPressed)
+        if (IsOpen())
         {
             leftDoor.position = Vector3.Lerp(leftDoor.position, leftOpenPos, Time.deltaTime * slideSpeed);
             rightDoor.position = Vector3.Lerp(rightDoor.position, rightOpenPos, Time.deltaTime * slideSpeed);
@@ -50,5 +36,22 @@ public class DoorController : MonoBehaviour
             leftDoor.position = Vector3.Lerp(leftDoor.position, leftClosedPos, Time.deltaTime * slideSpeed);
             rightDoor.position = Vector3.Lerp(rightDoor.position, rightClosedPos, Time.deltaTime * slideSpeed);
         }
+    }
+
+    public bool IsOpen()
+    {
+        foreach (GameObject plateObj in plates)
+        {
+            LightPlate light = plateObj.GetComponent<LightPlate>();
+            HeavyPlate heavy = plateObj.GetComponent<HeavyPlate>();
+
+            bool pressed = false;
+            if (light != null) pressed = light.isPressed;
+            else if (heavy != null) pressed = heavy.isPressed;
+
+            if (!pressed) return false;
+        }
+
+        return true;
     }
 }

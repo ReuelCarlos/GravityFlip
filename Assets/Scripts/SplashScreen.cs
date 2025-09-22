@@ -28,8 +28,8 @@ public class SplashScreen : MonoBehaviour
     public float logoDuration = 2f;
 
     [Header("Bobbing Settings")]
-    public float bobSpeed = 2f;   // How fast the bobbing cycles
-    public float bobHeight = 10f; // How high the bobbing goes
+    public float bobSpeed = 2f;       // How fast the bobbing cycles
+    public float bobHeight = 10f;     // How high the bobbing goes
     public bool randomizeOffset = true; // Whether each sprite bobs uniquely
 
     private Vector2 bgStartPos;
@@ -73,7 +73,7 @@ public class SplashScreen : MonoBehaviour
         splashPanel.SetActive(false);
         titlePanel.SetActive(true);
 
-        // Fade in entire title screen instantly (no delay)
+        // Fade in entire title screen
         yield return StartCoroutine(FadeCanvasGroup(titleCanvasGroup, 0, 1, fadeDuration));
 
         // Sprites appear immediately with bobbing

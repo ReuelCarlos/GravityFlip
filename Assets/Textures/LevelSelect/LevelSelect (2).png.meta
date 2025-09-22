@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 785658e06ddccea45a49b3755b7ce61a
+guid: ec9617ef52388ef488f234c6f228ee5d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4353709736638696216
-    second: W1 (5)_0
+      213: 765478895511120457
+    second: LevelSelect (2)_0
+  - first:
+      213: 5254707544366972094
+    second: LevelSelect (2)_1
+  - first:
+      213: -5473757664723400668
+    second: LevelSelect (2)_2
+  - first:
+      213: -4268141204915524520
+    second: LevelSelect (2)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: W1 (5)_0
+      name: LevelSelect (2)_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 58
-        width: 1138
-        height: 591
+        x: 302
+        y: 323
+        width: 95
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8e4bd7cbf048493c0800000000000000
-      internalID: -4353709736638696216
+      spriteID: 94aaff1fff68f9a00800000000000000
+      internalID: 765478895511120457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelSelect (2)_1
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 262
+        width: 483
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebcfe84cba87ce840800000000000000
+      internalID: 5254707544366972094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelSelect (2)_2
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 392
+        width: 95
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4280797b76e4904b0800000000000000
+      internalID: -5473757664723400668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelSelect (2)_3
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 288
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c6dcd003484c4c0800000000000000
+      internalID: -4268141204915524520
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      W1 (5)_0: -4353709736638696216
+      LevelSelect (2)_0: 765478895511120457
+      LevelSelect (2)_1: 5254707544366972094
+      LevelSelect (2)_2: -5473757664723400668
+      LevelSelect (2)_3: -4268141204915524520
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

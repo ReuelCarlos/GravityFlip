@@ -2,100 +2,80 @@ using UnityEngine;
 
 public class LightSwitch : MonoBehaviour
 {
-    
     public GameObject LightBox;
     private Rigidbody2D[] lbArray;
     private bool isSwitchFlipped = false;
     private int lightBCount;
-    //private Tag switchtag;
 
-     //Interface
+    // Interface
     public Collider2D player;
     private bool playerInRange = false;
+
+    // Lever Sprite Swap
+    public SpriteRenderer leverRenderer; // Assign the lever's SpriteRenderer
+    public Sprite leverOffSprite;        // Lever in "off" position
+    public Sprite leverOnSprite;         // Lever in "on" position
 
     void Start()
     {
         lightBCount = LightBox.transform.childCount;
         lbToArray();
         fConstraint();
+
+        // Initialize lever sprite
+        leverRenderer.sprite = leverOffSprite;
     }
 
-    
     void Update()
     {
-        if(playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-           lightBox();
-        }        
-    }
-
-    void lbToArray(){
-        
-        lbArray = new Rigidbody2D[lightBCount];
-        for(int i = 0; i < lightBCount; i++) 
-        {
-            lbArray[i] = LightBox.transform.GetChild(i).gameObject.GetComponent<Rigidbody2D>();
+            FlipSwitch();
         }
     }
 
-     //NOT FINAL FOR Box
-    void OnTriggerEnter2D (Collider2D other)
+    void lbToArray()
     {
-
-            playerInRange = true;
+        lbArray = new Rigidbody2D[lightBCount];
+        for (int i = 0; i < lightBCount; i++)
+        {
+            lbArray[i] = LightBox.transform.GetChild(i).GetComponent<Rigidbody2D>();
+        }
     }
 
-    void OnTriggerExit2D (Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
+        playerInRange = true;
+    }
 
+    void OnTriggerExit2D(Collider2D other)
+    {
         playerInRange = false;
     }
 
-
-    void lightBox()
+    void FlipSwitch()
     {
-       isSwitchFlipped = !isSwitchFlipped; 
-       
+        isSwitchFlipped = !isSwitchFlipped;
 
-       if(isSwitchFlipped)
-       {
-            for(int i = 0; i < lightBCount; i++) 
-            {
-                if(lbArray[i].gameObject.CompareTag("rLightBox"))
-                {
-                    lbArray[i].GetComponent<Rigidbody2D>().gravityScale = -1f;
-                    
-                }else if(lbArray[i].gameObject.CompareTag("gLightBox"))
-                {
-                    lbArray[i].GetComponent<Rigidbody2D>().gravityScale = -1f;
-                }
-            }
-       
-       }else if(!isSwitchFlipped)
+        // Swap lever sprite instantly
+        leverRenderer.sprite = isSwitchFlipped ? leverOnSprite : leverOffSprite;
+
+        // Toggle gravity of boxes
+        float gravity = isSwitchFlipped ? -1f : 1f;
+        for (int i = 0; i < lightBCount; i++)
         {
-            for(int i = 0; i < lightBCount; i++) 
+            if (lbArray[i].CompareTag("rLightBox") || lbArray[i].CompareTag("gLightBox"))
             {
-                if(lbArray[i].gameObject.CompareTag("rLightBox"))
-                {
-                    lbArray[i].GetComponent<Rigidbody2D>().gravityScale = 1f;
-                    
-                }else if(lbArray[i].gameObject.CompareTag("gLightBox"))
-                {
-                    lbArray[i].GetComponent<Rigidbody2D>().gravityScale = 1f;
-                }
+                lbArray[i].gravityScale = gravity;
             }
         }
     }
 
     void fConstraint()
     {
-        for(int i = 0; i < lightBCount; i++) 
-            {
-                
-                lbArray[i].GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
-            }
+        for (int i = 0; i < lightBCount; i++)
+        {
+            lbArray[i].constraints = RigidbodyConstraints2D.FreezePositionX;
+        }
     }
-
-  
-    
 }

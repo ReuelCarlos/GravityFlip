@@ -9,6 +9,12 @@ TagManager:
   - LightBox
   - HeavySwitch
   - LightSwitch
+  - RedPlate
+  - GreenPlate
+  - gHeavyBox
+  - rHeavyBox
+  - gLightBox
+  - rLightBox
   layers:
   - Default
   - TransparentFX

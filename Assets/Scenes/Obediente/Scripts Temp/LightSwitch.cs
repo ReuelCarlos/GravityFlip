@@ -23,7 +23,7 @@ public class LightSwitch : MonoBehaviour
         fConstraint();
 
         // Initialize lever sprite
-        leverRenderer.sprite = leverOffSprite;
+        leverRenderer.sprite = leverOffSprite; 
     }
 
     void Update()

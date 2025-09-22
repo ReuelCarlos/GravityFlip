@@ -3591,12 +3591,24 @@ PrefabInstance:
       value: rLight Switch
       objectReference: {fileID: 0}
     - target: {fileID: 8177834027120654326, guid: 3db000c67fb2cb44d8361370bd25ca72, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177834027120654326, guid: 3db000c67fb2cb44d8361370bd25ca72, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177834027120654326, guid: 3db000c67fb2cb44d8361370bd25ca72, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.30571064
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177834027120654326, guid: 3db000c67fb2cb44d8361370bd25ca72, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8177834027120654326, guid: 3db000c67fb2cb44d8361370bd25ca72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1
+      value: -3.55
       objectReference: {fileID: 0}
     - target: {fileID: 8177834027120654326, guid: 3db000c67fb2cb44d8361370bd25ca72, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3701,9 +3713,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2233321469641917971, guid: da6c751142d85d54bb697d7a0ae7a939, type: 3}
+      propertyPath: plates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233321469641917971, guid: da6c751142d85d54bb697d7a0ae7a939, type: 3}
       propertyPath: 'plates.Array.data[0]'
       value: 
       objectReference: {fileID: 1425050804}
+    - target: {fileID: 2233321469641917971, guid: da6c751142d85d54bb697d7a0ae7a939, type: 3}
+      propertyPath: 'plates.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6470976876462309552, guid: da6c751142d85d54bb697d7a0ae7a939, type: 3}
       propertyPath: m_Name
       value: Exit

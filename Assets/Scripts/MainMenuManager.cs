@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
     public GameObject mainMenuPanel;        // Main menu (Play, Options, Exit buttons)
     public GameObject levelSelectOverlay;   // Level select overlay (transparent black bg + world buttons)
     public GameObject optionsOverlay;       // Options overlay (transparent black bg)
+    public GameObject exitConfirmPanel;     // NEW: Exit confirmation panel
 
     [Header("World Panels")]
     public GameObject[] worldPanels;        // Assign World1Panel, World2Panel, etc.
@@ -15,6 +16,7 @@ public class MenuManager : MonoBehaviour
     {
         // Initial state: show main menu, hide overlays
         ShowMainMenu();
+        if (exitConfirmPanel != null) exitConfirmPanel.SetActive(false);
     }
 
     // MAIN MENU BUTTONS
@@ -32,8 +34,33 @@ public class MenuManager : MonoBehaviour
 
     public void Exit()
     {
+        // Instead of quitting, show confirmation panel
+        if (exitConfirmPanel != null)
+        {
+            mainMenuPanel.SetActive(false);
+            exitConfirmPanel.SetActive(true);
+        }
+        else
+        {
+            Application.Quit();
+            Debug.Log("Quit Game"); // only shows in editor
+        }
+    }
+
+    // EXIT CONFIRMATION BUTTONS
+    public void ConfirmExitYes()
+    {
         Application.Quit();
-        Debug.Log("Quit Game"); // only shows in editor
+        Debug.Log("Quit Game"); // works only in build
+    }
+
+    public void ConfirmExitNo()
+    {
+        if (exitConfirmPanel != null)
+        {
+            exitConfirmPanel.SetActive(false);
+            mainMenuPanel.SetActive(true);
+        }
     }
 
     // LEVEL SELECT
@@ -81,6 +108,7 @@ public class MenuManager : MonoBehaviour
         levelSelectOverlay.SetActive(false);
 
         if (optionsOverlay != null) optionsOverlay.SetActive(false);
+        if (exitConfirmPanel != null) exitConfirmPanel.SetActive(false);
 
         foreach (GameObject panel in worldPanels)
         {

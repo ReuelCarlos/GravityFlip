@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 0f346117a02b94a43a0b90186f29e904
+guid: cf18ffb1868a2ab48af3160290531a92
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8225812012031239119
-    second: LevelSelect_0
-  - first:
-      213: -3201888878624163665
-    second: LevelSelect_1
-  - first:
-      213: -4502928127654240703
-    second: LevelSelect_2
-  - first:
-      213: -3862178733969638199
-    second: LevelSelect_3
-  - first:
-      213: 625846199752909673
-    second: LevelSelect_4
+      213: -7632247614617554869
+    second: SOUNDLABEL (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -112,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LevelSelect_0
+      name: SOUNDLABEL (2)_0
       rect:
         serializedVersion: 2
-        x: 302
-        y: 323
-        width: 95
-        height: 95
+        x: 295
+        y: 223
+        width: 689
+        height: 274
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,96 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc363465174f72270800000000000000
-      internalID: 8225812012031239119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LevelSelect_1
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 262
-        width: 483
-        height: 260
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fa8355b770b9093d0800000000000000
-      internalID: -3201888878624163665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LevelSelect_2
-      rect:
-        serializedVersion: 2
-        x: 845
-        y: 392
-        width: 95
-        height: 95
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 14edd06b9b26281c0800000000000000
-      internalID: -4502928127654240703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LevelSelect_3
-      rect:
-        serializedVersion: 2
-        x: 853
-        y: 288
-        width: 46
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ccfba677e8c66ac0800000000000000
-      internalID: -3862178733969638199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LevelSelect_4
-      rect:
-        serializedVersion: 2
-        x: 794
-        y: 170
-        width: 121
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 963ec448dc37fa800800000000000000
-      internalID: 625846199752909673
+      spriteID: b40f5ec5b3fc41690800000000000000
+      internalID: -7632247614617554869
       vertices: []
       indices: 
       edges: []
@@ -225,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LevelSelect_0: 8225812012031239119
-      LevelSelect_1: -3201888878624163665
-      LevelSelect_2: -4502928127654240703
-      LevelSelect_3: -3862178733969638199
-      LevelSelect_4: 625846199752909673
+      SOUNDLABEL (2)_0: -7632247614617554869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

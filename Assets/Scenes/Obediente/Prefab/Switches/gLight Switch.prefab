@@ -28,9 +28,9 @@ Transform:
   m_GameObject: {fileID: 5386896328780242664}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.993, y: -3.55, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 0.30571064}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -106,6 +106,7 @@ MonoBehaviour:
   leverRenderer: {fileID: 6889086640523631817}
   leverOffSprite: {fileID: 21300000, guid: 87fe2de6e8dcc774387de6f46d2f7bb3, type: 3}
   leverOnSprite: {fileID: 21300000, guid: bf9e9c7db719d2046baadf1563ddb87a, type: 3}
+  flipped: 0
 --- !u!61 &8219532019586995405
 BoxCollider2D:
   m_ObjectHideFlags: 0

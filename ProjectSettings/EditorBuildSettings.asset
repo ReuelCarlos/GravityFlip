@@ -5,15 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main/Splash/SplashScreenScene.unity
     guid: 8e67dc1a97545bb46b9b8f635e3e0b83
   - enabled: 1
     path: Assets/Scenes/Main/Level/World 1-1.unity
     guid: 873b64bec1081a944994313259b0807a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main/Level/World 1-2temp.unity
     guid: 8d8eb89c41044914692f7d887c39f5c6
+  - enabled: 1
+    path: Assets/Scenes/Obediente/World1FunctionalLayouts/World1-2Temp.unity
+    guid: 55cd1d82dcdcc684cba039070cffa45b
+  - enabled: 1
+    path: Assets/Scenes/Obediente/World1FunctionalLayouts/World 1-3temp.unity
+    guid: 4e777c54a363e804bb59ab614e1318fb
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0

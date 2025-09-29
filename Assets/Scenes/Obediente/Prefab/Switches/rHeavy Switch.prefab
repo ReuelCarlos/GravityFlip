@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 5340612793495027358}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2401857, y: -2.99, z: 0}
-  m_LocalScale: {x: 7.5, y: 7.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,6 +97,7 @@ MonoBehaviour:
   leverRenderer: {fileID: 8310422991558070089}
   leverOffSprite: {fileID: 21300000, guid: 176286b3dcc2a2a4bb27ed19ac73c2d1, type: 3}
   leverOnSprite: {fileID: 21300000, guid: 90278b98ba167a746b55ca3e668248ba, type: 3}
+  flipped: 0
 --- !u!212 &8310422991558070089
 SpriteRenderer:
   m_ObjectHideFlags: 0

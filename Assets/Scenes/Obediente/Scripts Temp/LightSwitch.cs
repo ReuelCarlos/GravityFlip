@@ -4,7 +4,6 @@ public class LightSwitch : MonoBehaviour
 {
     public GameObject LightBox;
     private Rigidbody2D[] lbArray;
-    private bool isSwitchFlipped = false;
     private int lightBCount;
 
     // Interface
@@ -16,21 +15,25 @@ public class LightSwitch : MonoBehaviour
     public Sprite leverOffSprite;        // Lever in "off" position
     public Sprite leverOnSprite;         // Lever in "on" position
 
+    [Header("Level Settings")]
+    public bool flipped = false; // Checkbox in Inspector
+
     void Start()
     {
         lightBCount = LightBox.transform.childCount;
         lbToArray();
         fConstraint();
 
-        // Initialize lever sprite
-        leverRenderer.sprite = leverOffSprite; 
+        // Apply Inspector checkbox state
+        ApplySwitchState(flipped);
     }
 
     void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            FlipSwitch();
+            flipped = !flipped;
+            ApplySwitchState(flipped);
         }
     }
 
@@ -53,15 +56,13 @@ public class LightSwitch : MonoBehaviour
         playerInRange = false;
     }
 
-    void FlipSwitch()
+    void ApplySwitchState(bool state)
     {
-        isSwitchFlipped = !isSwitchFlipped;
-
-        // Swap lever sprite instantly
-        leverRenderer.sprite = isSwitchFlipped ? leverOnSprite : leverOffSprite;
+        // Update lever sprite
+        leverRenderer.sprite = state ? leverOnSprite : leverOffSprite;
 
         // Toggle gravity of boxes
-        float gravity = isSwitchFlipped ? -1f : 1f;
+        float gravity = state ? -1f : 1f;
         for (int i = 0; i < lightBCount; i++)
         {
             if (lbArray[i].CompareTag("rLightBox") || lbArray[i].CompareTag("gLightBox"))

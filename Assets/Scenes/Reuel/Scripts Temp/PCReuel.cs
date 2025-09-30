@@ -35,7 +35,7 @@ public class PCReuel : MonoBehaviour
                 hit1.collider.gameObject.tag == "rHeavyBox" ||
                 hit1.collider.gameObject.tag == "rLightBox" ||
                 hit1.collider.gameObject.tag == "gHeavyBox" ||
-                hit1.collider.gameObject.tag == "glightBox"
+                hit1.collider.gameObject.tag == "gLightBox"
             )
             && Input.GetKeyDown(KeyCode.E))
         {

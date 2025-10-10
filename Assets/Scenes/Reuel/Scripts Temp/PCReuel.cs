@@ -72,5 +72,13 @@ public class PCReuel : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(origin, checkDirection, groundCheckDistance, groundLayer);
         isGrounded = hit.collider != null;
     }
+
+    void OnTriggerEnter2D(Collider2D other){
+        
+        if(other.CompareTag("Spikers"))
+        {
+            Debug.Log("MEW");
+        }
+    }
  
 }

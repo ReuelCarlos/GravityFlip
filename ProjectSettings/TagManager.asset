@@ -16,6 +16,7 @@ TagManager:
   - gLightBox
   - rLightBox
   - DoorExit
+  - Spikers
   layers:
   - Default
   - TransparentFX

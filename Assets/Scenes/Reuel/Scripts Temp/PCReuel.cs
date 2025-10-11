@@ -94,7 +94,9 @@ public class PCReuel : MonoBehaviour
             if(other.CompareTag("Spikers")||other.CompareTag("LiveWires"))
             {   
                 _playerImmunity = true;
+                StartCoroutine(PlayerImmuneAni());
                 StartCoroutine(PlayerImmune());
+                
                 _playerLives -= 1;
                 livesText.text = _playerLives.ToString();
             }
@@ -110,6 +112,17 @@ public class PCReuel : MonoBehaviour
         _playerImmunity = false;
     }
 
+    IEnumerator PlayerImmuneAni(){
+        Renderer body = this.gameObject.GetComponent<Renderer>();
+            
+            while(_playerImmunity == true){
+            body.enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            body.enabled = true;
+            yield return new WaitForSeconds(0.1f);
+            
+            }
+    }
    
  
 }

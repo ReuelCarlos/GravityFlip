@@ -17,6 +17,8 @@ TagManager:
   - rLightBox
   - DoorExit
   - Spikers
+  - LiveWires
+  - Laser
   layers:
   - Default
   - TransparentFX

@@ -19,6 +19,7 @@ TagManager:
   - Spikers
   - LiveWires
   - Laser
+  - Hazards
   layers:
   - Default
   - TransparentFX

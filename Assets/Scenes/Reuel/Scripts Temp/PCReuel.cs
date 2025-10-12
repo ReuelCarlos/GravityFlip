@@ -32,6 +32,12 @@ public class PCReuel : MonoBehaviour
 
     }
 
+    void OnDrawGizmos(){
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, transform.position + transform.right*distance);
+    }
+
     void Update()
     {
 
@@ -52,14 +58,7 @@ public class PCReuel : MonoBehaviour
             box1.GetComponent<FixedJoint2D>().enabled = true;
             box1.GetComponent<FixedJoint2D>().connectedBody = GetComponent<Rigidbody2D>();
             
-        }else if (hit1.collider != null &&
-            (
-            hit1.collider.gameObject.tag == "rHeavyBox" ||
-            hit1.collider.gameObject.tag == "rLightBox" ||
-            hit1.collider.gameObject.tag == "gHeavyBox" ||
-            hit1.collider.gameObject.tag == "gLightBox"
-            )
-            &Input.GetKeyUp(KeyCode.E))
+        }else if ( box1 != null && Input.GetKeyUp(KeyCode.E))
             {
                 Debug.Log("Released");
                 box1.GetComponent<FixedJoint2D>().enabled = false;

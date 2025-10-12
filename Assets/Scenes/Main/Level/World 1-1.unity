@@ -16257,6 +16257,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: GateController
       objectReference: {fileID: 0}
+    - target: {fileID: 3729432336451408456, guid: 4c7dc4da177f06c4d8af3a69d5831ffa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.584375
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729432336451408456, guid: 4c7dc4da177f06c4d8af3a69d5831ffa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4002863
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729432336451408456, guid: 4c7dc4da177f06c4d8af3a69d5831ffa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729432336451408456, guid: 4c7dc4da177f06c4d8af3a69d5831ffa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.48828
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729432336451408456, guid: 4c7dc4da177f06c4d8af3a69d5831ffa, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3815811711348761193, guid: 4c7dc4da177f06c4d8af3a69d5831ffa, type: 3}
       propertyPath: 'plates.Array.data[0]'
       value: 

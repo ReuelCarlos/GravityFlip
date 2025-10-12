@@ -11,18 +11,25 @@ public class PCReuel : MonoBehaviour
     public float groundCheckDistance = 0.6f;
     public LayerMask groundLayer;
 
-
-
-
     //Lives
     public TextMeshProUGUI livesText;
+
+
     private Rigidbody2D rb;
     private bool isGrounded;
     public Animator animator;
     private GameObject box;
+    
+    //RayCast
     public float distance = 1f;
     public LayerMask boxMask;
     GameObject box1;
+
+
+    //Scoring
+    public float totalTime;
+    public int lives;
+    public int fragmentsCollected;
 
     void Start()
     {   
@@ -40,7 +47,11 @@ public class PCReuel : MonoBehaviour
 
     void Update()
     {
+        //Updating vars for socring
+        lives = _playerLives;
+        totalTime += Time.deltaTime;
 
+        //Detecting Boxes
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit1 = Physics2D.Raycast(transform.position, transform.right, distance, boxMask);
       
@@ -102,7 +113,13 @@ public class PCReuel : MonoBehaviour
         }else if(_playerImmunity){
             Debug.Log("Immune");   
         }
+
+        if(other.CompareTag("Collectible")){
+            fragmentsCollected += 1;
+        }
     }
+
+
 
     IEnumerator PlayerImmune(){
         Debug.Log("Immunity On");

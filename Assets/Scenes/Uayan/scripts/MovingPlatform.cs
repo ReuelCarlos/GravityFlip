@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public Transform pointA; // Empty GameObject for start position
-    public Transform pointB; // Empty GameObject for end position
+    public Transform pointA; // Start position
+    public Transform pointB; // End position
     public float speed = 2f;
 
     private Vector3 target;
@@ -25,20 +25,17 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    // Makes player move with platform when standing on it
+    // Attach any object standing on the platform
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
-        {
-            collision.collider.transform.SetParent(transform);
-        }
+        // Make the colliding object a child of the platform so it moves with it
+        collision.collider.transform.SetParent(transform);
     }
 
+    // Detach when it leaves
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
-        {
-            collision.collider.transform.SetParent(null);
-        }
+        // Remove the parent so it moves independently again
+        collision.collider.transform.SetParent(null);
     }
 }

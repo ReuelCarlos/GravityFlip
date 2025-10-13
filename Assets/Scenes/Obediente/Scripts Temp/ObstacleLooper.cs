@@ -36,25 +36,21 @@ public class ObstacleLooper : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
-        {
-            collision.collider.transform.SetParent(transform);
-        }
+        // Attach any object standing on it
+        collision.collider.transform.SetParent(transform);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
-        {
-            collision.collider.transform.SetParent(null);
-        }
+        // Detach when leaving
+        collision.collider.transform.SetParent(null);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        // Push boxes or any rigidbody objects
+        // Push any object with a Rigidbody2D
         Rigidbody2D rb = collision.rigidbody;
-        if (rb != null && !collision.collider.CompareTag("Player"))
+        if (rb != null)
         {
             Vector2 pushDirection = (collision.transform.position - transform.position).normalized;
             rb.AddForce(pushDirection * speed * 50f * Time.deltaTime, ForceMode2D.Force);

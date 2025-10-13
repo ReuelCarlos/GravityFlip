@@ -49,4 +49,15 @@ public class ObstacleLooper : MonoBehaviour
             collision.collider.transform.SetParent(null);
         }
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Push boxes or any rigidbody objects
+        Rigidbody2D rb = collision.rigidbody;
+        if (rb != null && !collision.collider.CompareTag("Player"))
+        {
+            Vector2 pushDirection = (collision.transform.position - transform.position).normalized;
+            rb.AddForce(pushDirection * speed * 50f * Time.deltaTime, ForceMode2D.Force);
+        }
+    }
 }

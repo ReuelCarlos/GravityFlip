@@ -35,17 +35,19 @@ public class WinLose : MonoBehaviour
     //SFX 
     [SerializeField] private AudioMixer mixer;
 
-    void Start()
+    public void Start()
     {
        previousScoreLevel = nextScoreLevel;
        Panel.SetActive(false);
-       _timer = 10;
+       _timer = 120;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(_playerScript._playerLives<= 0){
+            GameOver();
+        }
         
         if(timerEnabled){
             if(_timer <= 0){
@@ -57,7 +59,7 @@ public class WinLose : MonoBehaviour
             }
         }
     }
-    void GameOver()
+    public void GameOver()
     {
         Panel.SetActive(true);
 
@@ -78,7 +80,7 @@ public class WinLose : MonoBehaviour
         Time.timeScale = 0f;
         DisableSFX();
     }
-    void ExitLevel()
+    public void ExitLevel()
     {
         
         //Accumulate the score
@@ -102,6 +104,7 @@ public class WinLose : MonoBehaviour
     void DisableSFX(){
         mixer.SetFloat("SoundEffects", -80f);
     }
+
     void OnTriggerEnter2D(Collider2D other){
         
         if(other.gameObject.CompareTag("Player"))

@@ -18,8 +18,13 @@ public class DoorController : MonoBehaviour
     private Vector3 leftOpenPos;
     private Vector3 rightOpenPos;
 
+    //Exit
+    public WinLose panelScript;
+    public bool isDoorOpen = false;
     void Start()
-    {
+    {   
+
+        
         // Save closed positions
         leftClosedPos = leftDoor.position;
         rightClosedPos = rightDoor.position;
@@ -27,6 +32,8 @@ public class DoorController : MonoBehaviour
         // Calculate open positions
         leftOpenPos = leftClosedPos + Vector3.left * slideDistance;
         rightOpenPos = rightClosedPos + Vector3.right * slideDistance;
+
+      
     }
 
     void Update()
@@ -63,6 +70,16 @@ public class DoorController : MonoBehaviour
                 return false;
         }
 
+        isDoorOpen = true;
+
+
         return true;
+    }
+
+    void OnTriggerEnter2D(Collider2D other){
+        
+        if(isDoorOpen && other.CompareTag("Player")){
+            panelScript.ExitLevel();
+        }
     }
 }

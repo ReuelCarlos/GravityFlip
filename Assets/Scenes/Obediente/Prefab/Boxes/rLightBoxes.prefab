@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5368910314745425143}
   - component: {fileID: 2105702783632768554}
   - component: {fileID: 6259815709420040723}
+  - component: {fileID: 2217743680505192476}
   m_Layer: 7
   m_Name: LightBox
   m_TagString: rLightBox
@@ -213,3 +214,22 @@ RotationConstraint:
   m_Active: 1
   m_IsLocked: 1
   m_Sources: []
+--- !u!255 &2217743680505192476
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412338075557289618}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0.5, y: -3.5}
+  m_DampingRatio: 0
+  m_Frequency: 0

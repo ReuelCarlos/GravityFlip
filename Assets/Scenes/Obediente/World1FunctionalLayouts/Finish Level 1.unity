@@ -17158,8 +17158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1993512656}
-  minX: 1.5
-  maxX: 53.5
+  minX: 2.25
+  maxX: 52.5
 --- !u!1 &994246615
 GameObject:
   m_ObjectHideFlags: 0

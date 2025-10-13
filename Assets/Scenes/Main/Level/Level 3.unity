@@ -485,6 +485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragment (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1524150637337066357, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8af16e97acb2db24ca4131bf42a8b8fe, type: 3}
     - target: {fileID: 4549285457313783611, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
       propertyPath: m_LocalPosition.x
       value: 49.5
@@ -1483,8 +1487,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5668859836789293502, guid: 2d86a0518e3563942ab3c10f19a5ddd7, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_Resource: {fileID: 8300000, guid: fe3408e47025e1f48a8c4bd245c54e71, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -6195,6 +6199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragment (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1524150637337066357, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8af16e97acb2db24ca4131bf42a8b8fe, type: 3}
     - target: {fileID: 4549285457313783611, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
       propertyPath: m_LocalPosition.x
       value: 77
@@ -6546,6 +6554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragment (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1524150637337066357, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8af16e97acb2db24ca4131bf42a8b8fe, type: 3}
     - target: {fileID: 4549285457313783611, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
       propertyPath: m_LocalPosition.x
       value: 74
@@ -7069,6 +7081,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragment
       objectReference: {fileID: 0}
+    - target: {fileID: 1524150637337066357, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8af16e97acb2db24ca4131bf42a8b8fe, type: 3}
     - target: {fileID: 4549285457313783611, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -7636,6 +7652,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragment (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1524150637337066357, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8af16e97acb2db24ca4131bf42a8b8fe, type: 3}
     - target: {fileID: 4549285457313783611, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
       propertyPath: m_LocalPosition.x
       value: 61
@@ -10692,6 +10712,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragment (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1524150637337066357, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8af16e97acb2db24ca4131bf42a8b8fe, type: 3}
     - target: {fileID: 4549285457313783611, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -10941,8 +10965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854226a3bd07e5441895e89967afc029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: 2
-  thisLevel: 1
+  nextLevel: 3
+  thisLevel: 3
 --- !u!224 &1020638793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17449,6 +17473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragment (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1524150637337066357, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8af16e97acb2db24ca4131bf42a8b8fe, type: 3}
     - target: {fileID: 4549285457313783611, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33
@@ -18841,6 +18869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragment (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1524150637337066357, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8af16e97acb2db24ca4131bf42a8b8fe, type: 3}
     - target: {fileID: 4549285457313783611, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -19674,6 +19706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragment (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1524150637337066357, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8af16e97acb2db24ca4131bf42a8b8fe, type: 3}
     - target: {fileID: 4549285457313783611, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18
@@ -34202,6 +34238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragment (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1524150637337066357, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8af16e97acb2db24ca4131bf42a8b8fe, type: 3}
     - target: {fileID: 4549285457313783611, guid: aa0c5785787d24440b780e7a75d6e657, type: 3}
       propertyPath: m_LocalPosition.x
       value: 41.5

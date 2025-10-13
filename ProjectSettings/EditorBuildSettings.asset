@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main/Splash/SplashScreenScene.unity
-    guid: 8e67dc1a97545bb46b9b8f635e3e0b83
+    path: Assets/Scenes/Main/Level/Tutorial.unity
+    guid: b511aa08093c3c24b98a1180d5b27b3e
   - enabled: 1
     path: Assets/Scenes/Main/Level/Level 1.unity
     guid: babc3f91e2c55d341ac3ea1226b6cc69
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main/Level/World 1-1.unity
     guid: 873b64bec1081a944994313259b0807a
+  - enabled: 1
+    path: Assets/Scenes/Main/Splash/SplashScreenScene.unity
+    guid: 8e67dc1a97545bb46b9b8f635e3e0b83
   - enabled: 0
     path: Assets/Scenes/Main/Level/World 1-2temp.unity
     guid: 8d8eb89c41044914692f7d887c39f5c6

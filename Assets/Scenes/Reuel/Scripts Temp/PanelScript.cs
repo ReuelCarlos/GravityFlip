@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using TMPro;
 public class WinLose : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class WinLose : MonoBehaviour
 
     //PlayerScript
     [SerializeField] private PCReuel _playerScript;
+
+    //SFX 
+    [SerializeField] private AudioMixer mixer;
 
     void Start()
     {
@@ -71,9 +75,12 @@ public class WinLose : MonoBehaviour
         _livesLeftField.text = _playerScript.lives.ToString();
         _fragmentsField.text = _playerScript.fragmentsCollected.ToString();
         _scoreField.text = score.ToString();
+        Time.timeScale = 0f;
+        DisableSFX();
     }
     void ExitLevel()
     {
+        
         //Accumulate the score
         Panel.SetActive(true);
         _totalTime = (int)_playerScript.totalTime;
@@ -88,9 +95,13 @@ public class WinLose : MonoBehaviour
         _livesLeftField.text = _playerScript.lives.ToString();
         _fragmentsField.text = _playerScript.fragmentsCollected.ToString();
         _scoreField.text = score.ToString();
-        
+        Time.timeScale = 0f;
+        DisableSFX();
     }
 
+    void DisableSFX(){
+        mixer.SetFloat("SoundEffects", -80f);
+    }
     void OnTriggerEnter2D(Collider2D other){
         
         if(other.gameObject.CompareTag("Player"))

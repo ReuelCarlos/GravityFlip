@@ -8,10 +8,12 @@ public class SceneManagement : MonoBehaviour
 
     public void Restart(){
         SceneManager.LoadScene(thisLevel);
+        Time.timeScale = 1f;
     }
     
     public void NextLevel(){
         SceneManager.LoadScene(nextLevel);
+        Time.timeScale = 1f;
     }
 
     public void MainMenu(){

@@ -19,7 +19,7 @@ public class DoorController : MonoBehaviour
     private Vector3 rightOpenPos;
 
     //Exit
-    public WinLose panelScript;
+    public bool playerIsOnDoor = false;
     public bool isDoorOpen = false;
     void Start()
     {   
@@ -79,7 +79,7 @@ public class DoorController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         
         if(isDoorOpen && other.CompareTag("Player")){
-            panelScript.ExitLevel();
+            playerIsOnDoor = true;
         }
     }
 }

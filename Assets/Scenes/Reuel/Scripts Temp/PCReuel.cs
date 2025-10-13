@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PCReuel : MonoBehaviour
 {
     //Player
-    [SerializeField] private int _playerLives = 3;
+    public int _playerLives = 3;
     public float moveSpeed = 8f;
     private bool _playerImmunity;
     public float groundCheckDistance = 0.6f;

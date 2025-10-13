@@ -5,12 +5,13 @@ using System.Collections.Generic;
 public class PCReuel : MonoBehaviour
 {
     //Player
-    [SerializeField] private int _playerLives = 3;
+    public int _playerLives = 3;
     public float moveSpeed = 8f;
     private bool _playerImmunity;
     public float groundCheckDistance = 0.6f;
     public LayerMask groundLayer;
-    public bool connectedToBox;
+    public bool connectedToBox; 
+    public string lastHitHazard;
 
     //Lives
     public TextMeshProUGUI livesText;
@@ -146,7 +147,7 @@ public class PCReuel : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         
         if(!_playerImmunity){
-            if(other.CompareTag("Spikers")||other.CompareTag("LiveWires"))
+            if(other.CompareTag("Spikers")||other.CompareTag("LiveWires") || other.CompareTag("Laser"))
             {   
                 _playerImmunity = true;
                 StartCoroutine(PlayerImmuneAni());
@@ -161,6 +162,10 @@ public class PCReuel : MonoBehaviour
 
         if(other.CompareTag("Collectible")){
             fragmentsCollected += 1;
+        }
+
+        if(other.CompareTag("Spikers")||other.CompareTag("LiveWires") || other.CompareTag("Laser")){
+            lastHitHazard = other.gameObject.tag;
         }
     }
 

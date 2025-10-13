@@ -10,6 +10,7 @@ public class PCReuel : MonoBehaviour
     private bool _playerImmunity;
     public float groundCheckDistance = 0.6f;
     public LayerMask groundLayer;
+    public bool connectedToBox;
 
     //Lives
     public TextMeshProUGUI livesText;
@@ -31,6 +32,13 @@ public class PCReuel : MonoBehaviour
     public int lives;
     public int fragmentsCollected;
 
+    //Audio
+    public AudioSource src;
+    public AudioClip playerWalk;
+    public AudioClip boxMove;
+   
+
+
     void Start()
     {   
         livesText.text = _playerLives.ToString();
@@ -47,6 +55,8 @@ public class PCReuel : MonoBehaviour
 
     void Update()
     {
+
+
         //Updating vars for socring
         lives = _playerLives;
         totalTime += Time.deltaTime;
@@ -64,18 +74,22 @@ public class PCReuel : MonoBehaviour
             )
             && Input.GetKeyDown(KeyCode.E))
         {
+
             box1 = hit1.collider.gameObject;
             box1.GetComponent<Rigidbody2D>().constraints &= ~RigidbodyConstraints2D.FreezePositionX;
             box1.GetComponent<FixedJoint2D>().enabled = true;
             box1.GetComponent<FixedJoint2D>().connectedBody = GetComponent<Rigidbody2D>();
+            connectedToBox = true;
             
+
         }else if ( box1 != null && Input.GetKeyUp(KeyCode.E))
             {
                 Debug.Log("Released");
                 box1.GetComponent<FixedJoint2D>().enabled = false;
                 box1.GetComponent<Rigidbody2D>().constraints |= RigidbodyConstraints2D.FreezePositionX;
-                
-                
+                connectedToBox = false;
+                src.clip = boxMove;
+                src.Stop();
             }
         
 
@@ -83,10 +97,41 @@ public class PCReuel : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(inputX));
 
+        if(Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.D)){
+            src.clip = playerWalk;
+            src.Play();
+
+            
+        }else if(Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.D)){
+            src.clip = playerWalk;
+            src.Stop ();
+        }
+
+        //Box Sounds
+        if(
+            box1 != null && 
+            (Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.D)) 
+            && connectedToBox){
+                src.clip = boxMove;
+                src.Play();
+            }
+
+
+
+
+
         if (inputX != 0)
         {
             bool flippers = inputX < 0;
             transform.rotation = Quaternion.Euler(new Vector3(0f, flippers ? 180f : 0f, 0f));
+
+        }
+
+        if (inputX == 0)
+        {
+            // src.Stop();
+            
+
         }
 
         rb.linearVelocity = new Vector2(inputX * moveSpeed, rb.linearVelocity.y);

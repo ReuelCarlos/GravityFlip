@@ -8377,6 +8377,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7612369860454856658, guid: 63f464626a4a7284797b970ad208eef2, type: 3}
+      propertyPath: m_Sources.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612369860454856658, guid: 63f464626a4a7284797b970ad208eef2, type: 3}
+      propertyPath: m_Sources.Array.data[0].weight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8483323910455986716, guid: 63f464626a4a7284797b970ad208eef2, type: 3}
       propertyPath: m_Name
       value: gHeavyBoxes
@@ -35103,6 +35111,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 531288597424331439, guid: 0ea5c3711058dbd41b7ec24cec331ed1, type: 3}
+      propertyPath: m_Sources.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 531288597424331439, guid: 0ea5c3711058dbd41b7ec24cec331ed1, type: 3}
+      propertyPath: m_Sources.Array.data[0].weight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 950778286754770085, guid: 0ea5c3711058dbd41b7ec24cec331ed1, type: 3}
       propertyPath: m_Name
       value: gLightBoxes

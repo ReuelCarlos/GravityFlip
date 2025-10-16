@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3824905496611161391}
   - component: {fileID: 8446296673598924191}
   - component: {fileID: 1310723899676132581}
+  - component: {fileID: 8432138862810423401}
   m_Layer: 7
   m_Name: HeavyBox
   m_TagString: rHeavyBox
@@ -50,7 +51,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -181,6 +182,25 @@ RotationConstraint:
   m_Active: 1
   m_IsLocked: 1
   m_Sources: []
+--- !u!255 &8432138862810423401
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3938926663531891018}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 1.5, y: -3.25}
+  m_DampingRatio: 0
+  m_Frequency: 0
 --- !u!1 &3944931246040099395
 GameObject:
   m_ObjectHideFlags: 0

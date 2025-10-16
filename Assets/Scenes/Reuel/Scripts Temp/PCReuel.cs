@@ -5,24 +5,40 @@ using System.Collections.Generic;
 public class PCReuel : MonoBehaviour
 {
     //Player
-    [SerializeField] private int _playerLives = 3;
+    public int _playerLives = 3;
     public float moveSpeed = 8f;
     private bool _playerImmunity;
     public float groundCheckDistance = 0.6f;
     public LayerMask groundLayer;
-
-
-
+    public bool connectedToBox; 
+    public string lastHitHazard;
 
     //Lives
     public TextMeshProUGUI livesText;
+
+
     private Rigidbody2D rb;
     private bool isGrounded;
     public Animator animator;
     private GameObject box;
+    
+    //RayCast
     public float distance = 1f;
     public LayerMask boxMask;
     GameObject box1;
+
+
+    //Scoring
+    public float totalTime;
+    public int lives;
+    public int fragmentsCollected;
+
+    //Audio
+    public AudioSource src;
+    public AudioClip playerWalk;
+    public AudioClip boxMove;
+   
+
 
     void Start()
     {   
@@ -32,9 +48,21 @@ public class PCReuel : MonoBehaviour
 
     }
 
+    void OnDrawGizmos(){
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, transform.position + transform.right*distance);
+    }
+
     void Update()
     {
 
+
+        //Updating vars for socring
+        lives = _playerLives;
+        totalTime += Time.deltaTime;
+
+        //Detecting Boxes
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit1 = Physics2D.Raycast(transform.position, transform.right, distance, boxMask);
       
@@ -47,25 +75,22 @@ public class PCReuel : MonoBehaviour
             )
             && Input.GetKeyDown(KeyCode.E))
         {
+
             box1 = hit1.collider.gameObject;
             box1.GetComponent<Rigidbody2D>().constraints &= ~RigidbodyConstraints2D.FreezePositionX;
             box1.GetComponent<FixedJoint2D>().enabled = true;
             box1.GetComponent<FixedJoint2D>().connectedBody = GetComponent<Rigidbody2D>();
+            connectedToBox = true;
             
-        }else if (hit1.collider != null &&
-            (
-            hit1.collider.gameObject.tag == "rHeavyBox" ||
-            hit1.collider.gameObject.tag == "rLightBox" ||
-            hit1.collider.gameObject.tag == "gHeavyBox" ||
-            hit1.collider.gameObject.tag == "gLightBox"
-            )
-            &Input.GetKeyUp(KeyCode.E))
+
+        }else if ( box1 != null && Input.GetKeyUp(KeyCode.E))
             {
                 Debug.Log("Released");
                 box1.GetComponent<FixedJoint2D>().enabled = false;
                 box1.GetComponent<Rigidbody2D>().constraints |= RigidbodyConstraints2D.FreezePositionX;
-                
-                
+                connectedToBox = false;
+                src.clip = boxMove;
+                src.Stop();
             }
         
 
@@ -73,10 +98,41 @@ public class PCReuel : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(inputX));
 
+        if(Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.D)){
+            src.clip = playerWalk;
+            src.Play();
+
+            
+        }else if(Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.D)){
+            src.clip = playerWalk;
+            src.Stop ();
+        }
+
+        //Box Sounds
+        if(
+            box1 != null && 
+            (Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.D)) 
+            && connectedToBox){
+                src.clip = boxMove;
+                src.Play();
+            }
+
+
+
+
+
         if (inputX != 0)
         {
             bool flippers = inputX < 0;
             transform.rotation = Quaternion.Euler(new Vector3(0f, flippers ? 180f : 0f, 0f));
+
+        }
+
+        if (inputX == 0)
+        {
+            // src.Stop();
+            
+
         }
 
         rb.linearVelocity = new Vector2(inputX * moveSpeed, rb.linearVelocity.y);
@@ -91,7 +147,7 @@ public class PCReuel : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         
         if(!_playerImmunity){
-            if(other.CompareTag("Spikers")||other.CompareTag("LiveWires"))
+            if(other.CompareTag("Spikers")||other.CompareTag("LiveWires") || other.CompareTag("Laser"))
             {   
                 _playerImmunity = true;
                 StartCoroutine(PlayerImmuneAni());
@@ -103,7 +159,17 @@ public class PCReuel : MonoBehaviour
         }else if(_playerImmunity){
             Debug.Log("Immune");   
         }
+
+        if(other.CompareTag("Collectible")){
+            fragmentsCollected += 1;
+        }
+
+        if(other.CompareTag("Spikers")||other.CompareTag("LiveWires") || other.CompareTag("Laser")){
+            lastHitHazard = other.gameObject.tag;
+        }
     }
+
+
 
     IEnumerator PlayerImmune(){
         Debug.Log("Immunity On");

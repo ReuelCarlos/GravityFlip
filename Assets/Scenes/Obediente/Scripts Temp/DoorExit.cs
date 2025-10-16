@@ -5,6 +5,7 @@ public class DoorExit : MonoBehaviour
 {
     private HeavySwitch heavySwitch;
     private LightSwitch[] lightSwitches;
+    private DoorController doorController;
     private bool levelCompleted = false; // Ensure next level triggers only once
 
     void Start()
@@ -15,9 +16,17 @@ public class DoorExit : MonoBehaviour
         // Optionally find all LightSwitch objects in the scene
         lightSwitches = Object.FindObjectsByType<LightSwitch>(FindObjectsSortMode.None);
 
+        // Find the DoorController (required for plate checking)
+        doorController = Object.FindFirstObjectByType<DoorController>();
+
+        if (doorController == null)
+        {
+            Debug.LogWarning("No DoorController found in the scene — DoorExit will ignore plate requirements.");
+        }
+
         if (heavySwitch == null)
         {
-            Debug.Log("No HeavySwitch found in the scene. Only LightSwitches will be checked.");
+            Debug.Log("No HeavySwitch found in the scene. Only LightSwitches and plates will be checked.");
         }
     }
 
@@ -38,7 +47,11 @@ public class DoorExit : MonoBehaviour
                 }
             }
 
-            if (allHeavyFlipped && allLightFlipped)
+            // Check if all plates from DoorController are satisfied
+            bool allPlatesPressed = doorController == null || doorController.IsOpen();
+
+            // Only proceed if all conditions are true
+            if (allHeavyFlipped && allLightFlipped && allPlatesPressed)
             {
                 levelCompleted = true;
                 GoToNextLevel();

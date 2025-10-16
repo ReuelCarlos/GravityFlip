@@ -1,50 +1,64 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenuManager : MonoBehaviour   // ✅ must match file name
+public class PauseMenuManager : MonoBehaviour
 {
     [Header("UI Panels")]
-    public GameObject pauseMenuPanel;  // Drag in your PauseMenu Panel
+    public GameObject circularMenu;   // assign CircularMenu here
+    public GameObject pauseButton;    // assign PauseButton here
 
     private bool isPaused = false;
+    private bool menuOpen = false;
 
-    void Update()
+    void Start()
     {
-        // Press Escape to toggle pause
-        if (Input.GetKeyDown(KeyCode.Escape))
+        circularMenu.SetActive(false);
+    }
+
+    // ===== BUTTON FUNCTIONS =====
+    public void OnPauseButtonPressed()
+    {
+        if (!isPaused)
         {
-            if (isPaused)
-                ResumeGame();
-            else
-                PauseGame();
+            PauseGame();
+            ToggleCircularMenu();
+        }
+        else
+        {
+            ToggleCircularMenu();
         }
     }
 
-    // ====== BUTTON FUNCTIONS ======
     public void ResumeGame()
     {
-        pauseMenuPanel.SetActive(false);
-        Time.timeScale = 1f;   // Resume game time
+        circularMenu.SetActive(false);
+        pauseButton.SetActive(true);
+        Time.timeScale = 1f;
         isPaused = false;
+        menuOpen = false;
     }
 
     public void RestartLevel()
     {
-        Time.timeScale = 1f; // Ensure time is normal before restart
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ExitToMainMenu()
     {
-        Time.timeScale = 1f; // Reset time before switching
-        SceneManager.LoadScene("SplashScreenScene"); // Change to your main menu scene name
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("SplashScreenScene");
     }
 
     private void PauseGame()
     {
-        pauseMenuPanel.SetActive(true);
-        Time.timeScale = 0f;   // Freeze game time
+        Time.timeScale = 0f;
         isPaused = true;
+    }
+
+    private void ToggleCircularMenu()
+    {
+        menuOpen = !menuOpen;
+        circularMenu.SetActive(menuOpen);
     }
 }

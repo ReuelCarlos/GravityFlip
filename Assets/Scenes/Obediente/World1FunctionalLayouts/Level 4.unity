@@ -2250,7 +2250,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 27.428572, y: 15.428572}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2631,7 +2631,9 @@ MonoBehaviour:
     m_Bits: 4294967295
   connectedToBox: 0
   lastHitHazard: 
-  livesText: {fileID: 0}
+  heart1: {fileID: 0}
+  heart2: {fileID: 0}
+  heart3: {fileID: 0}
   animator: {fileID: 986739547}
   distance: 1
   boxMask:

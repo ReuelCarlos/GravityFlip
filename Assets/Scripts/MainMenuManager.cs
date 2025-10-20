@@ -4,19 +4,18 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     [Header("Panels")]
-    public GameObject mainMenuPanel;        // Main menu (Play, Options, Exit buttons)
-    public GameObject levelSelectOverlay;   // Level select overlay (transparent black bg + world buttons)
-    public GameObject optionsOverlay;       // Options overlay (transparent black bg)
-    public GameObject exitConfirmPanel;     // NEW: Exit confirmation panel
-
-    [Header("World Panels")]
-    public GameObject[] worldPanels;        // Assign World1Panel, World2Panel, etc.
+    public GameObject mainMenuPanel;          // Main menu (Play, Options, Exit buttons)
+    public GameObject levelSelectOverlay;     // Level select overlay (transparent black bg + level buttons)
+    public GameObject optionsOverlay;         // Options overlay
+    public GameObject exitConfirmPanel;       // Exit confirmation panel
+    public GameObject tutorialConfirmPanel;   // NEW: Tutorial confirmation panel
 
     void Start()
     {
         // Initial state: show main menu, hide overlays
         ShowMainMenu();
         if (exitConfirmPanel != null) exitConfirmPanel.SetActive(false);
+        if (tutorialConfirmPanel != null) tutorialConfirmPanel.SetActive(false);
     }
 
     // MAIN MENU BUTTONS
@@ -34,7 +33,6 @@ public class MenuManager : MonoBehaviour
 
     public void Exit()
     {
-        // Instead of quitting, show confirmation panel
         if (exitConfirmPanel != null)
         {
             mainMenuPanel.SetActive(false);
@@ -43,7 +41,7 @@ public class MenuManager : MonoBehaviour
         else
         {
             Application.Quit();
-            Debug.Log("Quit Game"); // only shows in editor
+            Debug.Log("Quit Game"); // Only shows in editor
         }
     }
 
@@ -51,7 +49,7 @@ public class MenuManager : MonoBehaviour
     public void ConfirmExitYes()
     {
         Application.Quit();
-        Debug.Log("Quit Game"); // works only in build
+        Debug.Log("Quit Game"); // Works only in build
     }
 
     public void ConfirmExitNo()
@@ -60,25 +58,6 @@ public class MenuManager : MonoBehaviour
         {
             exitConfirmPanel.SetActive(false);
             mainMenuPanel.SetActive(true);
-        }
-    }
-
-    // LEVEL SELECT
-    public void OpenWorld(int worldIndex)
-    {
-        if (worldIndex >= 0 && worldIndex < worldPanels.Length)
-        {
-            levelSelectOverlay.SetActive(false);
-            worldPanels[worldIndex].SetActive(true);
-        }
-    }
-
-    public void BackFromWorld(int worldIndex)
-    {
-        if (worldIndex >= 0 && worldIndex < worldPanels.Length)
-        {
-            worldPanels[worldIndex].SetActive(false);
-            levelSelectOverlay.SetActive(true);
         }
     }
 
@@ -101,18 +80,37 @@ public class MenuManager : MonoBehaviour
         mainMenuPanel.SetActive(true);
     }
 
-    // Called by splash screen or reset
+    // TUTORIAL CONFIRMATION
+    public void OpenTutorialConfirm()
+    {
+        if (tutorialConfirmPanel != null)
+        {
+            mainMenuPanel.SetActive(false);
+            tutorialConfirmPanel.SetActive(true);
+        }
+    }
+
+    public void ConfirmTutorialYes()
+    {
+        SceneManager.LoadScene("Tutorial"); // Replace with your tutorial scene name
+    }
+
+    public void ConfirmTutorialNo()
+    {
+        if (tutorialConfirmPanel != null)
+        {
+            tutorialConfirmPanel.SetActive(false);
+            mainMenuPanel.SetActive(true);
+        }
+    }
+
+    // RESET MAIN MENU STATE
     public void ShowMainMenu()
     {
         mainMenuPanel.SetActive(true);
-        levelSelectOverlay.SetActive(false);
-
+        if (levelSelectOverlay != null) levelSelectOverlay.SetActive(false);
         if (optionsOverlay != null) optionsOverlay.SetActive(false);
         if (exitConfirmPanel != null) exitConfirmPanel.SetActive(false);
-
-        foreach (GameObject panel in worldPanels)
-        {
-            if (panel != null) panel.SetActive(false);
-        }
+        if (tutorialConfirmPanel != null) tutorialConfirmPanel.SetActive(false);
     }
 }

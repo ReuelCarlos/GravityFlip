@@ -28,26 +28,24 @@ public class SplashScreen : MonoBehaviour
     public float logoDuration = 2f;
 
     [Header("Bobbing Settings")]
-    public float bobSpeed = 2f;       // How fast the bobbing cycles
-    public float bobHeight = 10f;     // How high the bobbing goes
-    public bool randomizeOffset = true; // Whether each sprite bobs uniquely
+    public float bobSpeed = 2f;
+    public float bobHeight = 10f;
+    public bool randomizeOffset = true;
 
     private Vector2 bgStartPos;
+    private bool skipRequested = false;  // 👈 NEW: flag to detect skip
 
     private void Start()
     {
-        // At start only splash is visible
         splashPanel.SetActive(true);
         titlePanel.SetActive(false);
 
-        // Safety: add CanvasGroup for title panel
         titleCanvasGroup = titlePanel.GetComponent<CanvasGroup>();
         if (titleCanvasGroup == null)
             titleCanvasGroup = titlePanel.AddComponent<CanvasGroup>();
 
         titleCanvasGroup.alpha = 0;
 
-        // Hide UI
         titleLogo.alpha = 0;
         menuPanel.alpha = 0;
 
@@ -55,28 +53,34 @@ public class SplashScreen : MonoBehaviour
         StartCoroutine(PlaySplashSequence());
     }
 
+    void Update()
+    {
+        // 👇 NEW: Player can tap/click or press any key to skip
+        if (Input.anyKeyDown || Input.touchCount > 0)
+        {
+            skipRequested = true;
+        }
+    }
+
     IEnumerator PlaySplashSequence()
     {
-        // White background visible, dev logo hidden
         whitePanel.alpha = 1;
         devLogo.alpha = 0;
 
-        // Fade in/out dev logo
-        yield return StartCoroutine(FadeCanvasGroup(devLogo, 0, 1, fadeDuration));
+        // 👇 Fade in/out dev logo (skip check each step)
+        yield return StartCoroutine(SkipOrRun(FadeCanvasGroup(devLogo, 0, 1, fadeDuration)));
+        if (skipRequested) yield break;
         yield return new WaitForSeconds(logoDuration);
-        yield return StartCoroutine(FadeCanvasGroup(devLogo, 1, 0, fadeDuration));
+        if (skipRequested) yield break;
+        yield return StartCoroutine(SkipOrRun(FadeCanvasGroup(devLogo, 1, 0, fadeDuration)));
+        if (skipRequested) yield break;
 
-        // Fade out white panel
-        yield return StartCoroutine(FadeCanvasGroup(whitePanel, 1, 0, fadeDuration));
+        yield return StartCoroutine(SkipOrRun(FadeCanvasGroup(whitePanel, 1, 0, fadeDuration)));
 
-        // Switch panels
         splashPanel.SetActive(false);
         titlePanel.SetActive(true);
+        yield return StartCoroutine(SkipOrRun(FadeCanvasGroup(titleCanvasGroup, 0, 1, fadeDuration)));
 
-        // Fade in entire title screen
-        yield return StartCoroutine(FadeCanvasGroup(titleCanvasGroup, 0, 1, fadeDuration));
-
-        // Sprites appear immediately with bobbing
         spriteContainer.SetActive(true);
         foreach (Transform child in spriteContainer.transform)
         {
@@ -84,10 +88,10 @@ public class SplashScreen : MonoBehaviour
             StartCoroutine(BobAnimation(child));
         }
 
-        // Scroll background fully before title logo
+        // 👇 Background scroll can be skipped
         float traveled = 0f;
         background.anchoredPosition = bgStartPos;
-        while (traveled < scrollDistance)
+        while (traveled < scrollDistance && !skipRequested)
         {
             float move = scrollSpeed * Time.deltaTime;
             background.anchoredPosition += new Vector2(0, -move);
@@ -95,13 +99,52 @@ public class SplashScreen : MonoBehaviour
             yield return null;
         }
 
-        // After scroll finishes → title logo drop in
-        yield return StartCoroutine(SlideAndFadeIn(titleLogo, new Vector2(0, 200), Vector2.zero, fadeDuration));
+        // 👇 Immediately jump to final state if skipped
+        if (skipRequested)
+        {
+            SkipToEndState();
+            yield break;
+        }
 
-        // Then menu panel fades in
+        yield return StartCoroutine(SlideAndFadeIn(titleLogo, new Vector2(0, 200), Vector2.zero, fadeDuration));
         yield return StartCoroutine(FadeCanvasGroup(menuPanel, 0, 1, fadeDuration));
     }
 
+    IEnumerator SkipOrRun(IEnumerator routine)
+    {
+        while (routine.MoveNext())
+        {
+            if (skipRequested)
+            {
+                SkipToEndState();
+                yield break;
+            }
+            yield return routine.Current;
+        }
+    }
+
+    private void SkipToEndState()
+    {
+        StopAllCoroutines();
+
+        splashPanel.SetActive(false);
+        titlePanel.SetActive(true);
+        titleCanvasGroup.alpha = 1;
+        whitePanel.alpha = 0;
+        devLogo.alpha = 0;
+        titleLogo.alpha = 1;
+        menuPanel.alpha = 1;
+        background.anchoredPosition = bgStartPos - new Vector2(0, scrollDistance);
+        spriteContainer.SetActive(true);
+
+        // start bobbing animation still
+        foreach (Transform child in spriteContainer.transform)
+            StartCoroutine(BobAnimation(child));
+
+        Debug.Log("Splash skipped — jumped to main menu instantly");
+    }
+
+    // (The rest of your coroutines stay the same)
     IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float duration)
     {
         float t = 0;

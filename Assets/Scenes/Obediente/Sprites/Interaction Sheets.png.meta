@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 0770ddcc3c3135a4c89f0b158ad0c6d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4476674766308658920
+    second: Interaction Sheets_0
+  - first:
+      213: 8482590788761907730
+    second: Interaction Sheets_1
+  - first:
+      213: -2130797123289902315
+    second: Interaction Sheets_2
+  - first:
+      213: -8380796749283250251
+    second: Interaction Sheets_3
+  - first:
+      213: -2755109665613458928
+    second: Interaction Sheets_4
+  - first:
+      213: 3472499030000511015
+    second: Interaction Sheets_5
+  - first:
+      213: 2829606626599357888
+    second: Interaction Sheets_6
+  - first:
+      213: 7131924260061890578
+    second: Interaction Sheets_7
+  - first:
+      213: -4133608671482652163
+    second: Interaction Sheets_8
+  - first:
+      213: -8913392833740754986
+    second: Interaction Sheets_9
+  - first:
+      213: -2599466743810645323
+    second: Interaction Sheets_10
+  - first:
+      213: -7162121577715816596
+    second: Interaction Sheets_11
+  - first:
+      213: -5604341660464007923
+    second: Interaction Sheets_12
+  - first:
+      213: 380589318165585508
+    second: Interaction Sheets_13
+  - first:
+      213: 4683926186688168788
+    second: Interaction Sheets_14
+  - first:
+      213: -3783486112999284169
+    second: Interaction Sheets_15
+  - first:
+      213: 2353971103474420701
+    second: Interaction Sheets_16
+  - first:
+      213: -6225244655328188232
+    second: Interaction Sheets_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Interaction Sheets_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 455
+        width: 218
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 811b73bb408afd1c0800000000000000
+      internalID: -4476674766308658920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_1
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 455
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2127723316738b570800000000000000
+      internalID: 8482590788761907730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_2
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 455
+        width: 146
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51391e94e43ed62e0800000000000000
+      internalID: -2130797123289902315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_3
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 455
+        width: 170
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf293882cd61bb80800000000000000
+      internalID: -8380796749283250251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_4
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 455
+        width: 212
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0125dd73b52e3c9d0800000000000000
+      internalID: -2755109665613458928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_5
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 269
+        width: 218
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 728a11e387bc03030800000000000000
+      internalID: 3472499030000511015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_6
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 269
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cdcb882c38c44720800000000000000
+      internalID: 2829606626599357888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_7
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 269
+        width: 146
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218caf5f35fa9f260800000000000000
+      internalID: 7131924260061890578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_8
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 269
+        width: 170
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df95dc760d872a6c0800000000000000
+      internalID: -4133608671482652163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_9
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 269
+        width: 212
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dfae5161744d4480800000000000000
+      internalID: -8913392833740754986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_10
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 113
+        width: 146
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b2a9b1e4c6dcebd0800000000000000
+      internalID: -2599466743810645323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_11
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 113
+        width: 146
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67a6122f580b9c90800000000000000
+      internalID: -7162121577715816596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_12
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 113
+        width: 146
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d05be10f3f06932b0800000000000000
+      internalID: -5604341660464007923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_13
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 5
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46e519ae7ff184500800000000000000
+      internalID: 380589318165585508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_14
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 5
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 453c2bfdc06a00140800000000000000
+      internalID: 4683926186688168788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_15
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 17
+        width: 146
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 732ed0e0d6b5e7bc0800000000000000
+      internalID: -3783486112999284169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_16
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 17
+        width: 146
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb802a2f3cfaa020800000000000000
+      internalID: 2353971103474420701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interaction Sheets_17
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 17
+        width: 146
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b8a34ff7fc7b99a0800000000000000
+      internalID: -6225244655328188232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Interaction Sheets_0: -4476674766308658920
+      Interaction Sheets_1: 8482590788761907730
+      Interaction Sheets_10: -2599466743810645323
+      Interaction Sheets_11: -7162121577715816596
+      Interaction Sheets_12: -5604341660464007923
+      Interaction Sheets_13: 380589318165585508
+      Interaction Sheets_14: 4683926186688168788
+      Interaction Sheets_15: -3783486112999284169
+      Interaction Sheets_16: 2353971103474420701
+      Interaction Sheets_17: -6225244655328188232
+      Interaction Sheets_2: -2130797123289902315
+      Interaction Sheets_3: -8380796749283250251
+      Interaction Sheets_4: -2755109665613458928
+      Interaction Sheets_5: 3472499030000511015
+      Interaction Sheets_6: 2829606626599357888
+      Interaction Sheets_7: 7131924260061890578
+      Interaction Sheets_8: -4133608671482652163
+      Interaction Sheets_9: -8913392833740754986
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

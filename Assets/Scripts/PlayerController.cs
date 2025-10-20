@@ -1,104 +1,76 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllers : MonoBehaviour
 {
-    [Header("Movement")]
-    public float moveSpeed = 8f;
-    public float acceleration = 10f;
-    public float deceleration = 15f;
-    public float airControlFactor = 0.6f; // less control in air
-
-    [Header("Jumping")]
+    public float moveSpeed = 5f;
     public float jumpForce = 12f;
-    public float groundCheckDistance = 0.6f;
+
+    public Transform groundCheckBottom;
+    public Transform groundCheckTop;
+    public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
-    [Header("Jump Buffer & Coyote Time")]
-    public float coyoteTime = 0.15f;
-    public float jumpBufferTime = 0.15f;
+    public float coyoteTime = 0.1f;
+    public float jumpBufferTime = 0.1f;
 
     private Rigidbody2D rb;
     private bool isGrounded;
-    private float coyoteTimeCounter;
-    private float jumpBufferCounter;
-    private float targetSpeed;
-    private float currentSpeed;
+    private float lastGroundedTime;
+    private float lastJumpPressedTime;
+    private float moveInput;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        // ---------------- MOVEMENT ----------------
-        float inputX = Input.GetAxisRaw("Horizontal");
-        targetSpeed = inputX * moveSpeed;
+        moveInput = Input.GetAxisRaw("Horizontal");
+        CheckGrounded();
 
-        // If airborne, reduce control
-        float accel = isGrounded ? acceleration : acceleration * airControlFactor;
-        float decel = isGrounded ? deceleration : deceleration * airControlFactor;
-
-        // Smooth speed
-        if (Mathf.Abs(inputX) > 0.01f)
-            currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, accel * Time.deltaTime);
-        else
-            currentSpeed = Mathf.MoveTowards(currentSpeed, 0, decel * Time.deltaTime);
-
-        rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
-
-        // ---------------- GROUND CHECK ----------------
-        Vector2 checkDirection = Physics2D.gravity.normalized;
-        Vector2 origin = (Vector2)transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(origin, checkDirection, groundCheckDistance, groundLayer);
-        isGrounded = hit.collider != null;
-
-        // Coyote Time
         if (isGrounded)
-            coyoteTimeCounter = coyoteTime;
-        else
-            coyoteTimeCounter -= Time.deltaTime;
+            lastGroundedTime = Time.time;
 
-        // Jump Buffer
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-            jumpBufferCounter = jumpBufferTime;
-        else
-            jumpBufferCounter -= Time.deltaTime;
+        if (Input.GetButtonDown("Jump"))
+            lastJumpPressedTime = Time.time;
 
-        // ---------------- JUMPING ----------------
-        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
+        if (lastGroundedTime + coyoteTime > Time.time &&
+            lastJumpPressedTime + jumpBufferTime > Time.time)
         {
-            // Jump opposite gravity
-            Vector2 jumpDir = -Physics2D.gravity.normalized;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // reset vertical velocity
-            rb.AddForce(jumpDir * jumpForce, ForceMode2D.Impulse);
-
-            jumpBufferCounter = 0;
+            Jump();
+            lastJumpPressedTime = -999f;
+            lastGroundedTime = -999f;
         }
 
-            // Variable jump height (short hop if released early)
-            if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && !isGrounded)
-        {
-            // Check if moving against gravity (i.e., still rising)
-            if (Vector2.Dot(rb.linearVelocity, -Physics2D.gravity.normalized) > 0)
-            {
-            rb.linearVelocity *= 0.5f; // cut velocity in half
-            }
-        }
-
-        // ---------------- FLIP GRAVITY ----------------
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Physics2D.gravity *= -1;
-            transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
-        }
+        if (Input.GetKeyDown(KeyCode.F))
+            FlipGravity();
     }
 
-    void OnDrawGizmosSelected()
+    void FixedUpdate()
     {
-        Gizmos.color = Color.red;
-        Vector2 checkDirection = Physics2D.gravity.normalized;
-        Vector2 origin = (Vector2)transform.position;
-        Gizmos.DrawLine(origin, origin + checkDirection * groundCheckDistance);
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+    }
+
+    void CheckGrounded()
+    {
+        if (Physics2D.gravity.y < 0)
+            isGrounded = Physics2D.OverlapCircle(groundCheckBottom.position, groundCheckRadius, groundLayer);
+        else
+            isGrounded = Physics2D.OverlapCircle(groundCheckTop.position, groundCheckRadius, groundLayer);
+    }
+
+    void Jump()
+    {
+        Vector2 jumpDir = -Physics2D.gravity.normalized;
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+        rb.linearVelocity += jumpDir * jumpForce;
+    }
+
+
+    void FlipGravity()
+    {
+        Physics2D.gravity *= -1;
+        transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
     }
 }

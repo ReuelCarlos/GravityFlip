@@ -3,7 +3,27 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Sprite
+  - HeavyBox
+  - LightBox
+  - HeavySwitch
+  - LightSwitch
+  - RedPlate
+  - GreenPlate
+  - gHeavyBox
+  - rHeavyBox
+  - gLightBox
+  - rLightBox
+  - DoorExit
+  - Spikers
+  - LiveWires
+  - Laser
+  - Hazards
+  - Collectible
+  - Intro
+  - PressureCollision
+  - HazardTrigger
   layers:
   - Default
   - TransparentFX
@@ -12,9 +32,9 @@ TagManager:
   - Water
   - UI
   - Ground
+  - Boxes
   - 
-  - 
-  - 
+  - FrontCeiling
   - 
   - 
   - 
@@ -40,6 +60,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 1952459569
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 4089077219
     locked: 0
   m_RenderingLayers:
   - Default

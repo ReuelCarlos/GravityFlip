@@ -1360,6 +1360,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5045366382702999690, guid: 0ea5c3711058dbd41b7ec24cec331ed1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6795456818567593836, guid: 0ea5c3711058dbd41b7ec24cec331ed1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.5
@@ -3562,6 +3566,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1289944875874689366, guid: db9bf58442db4b042a6ab60c6f41a7aa, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4053183577643548176, guid: db9bf58442db4b042a6ab60c6f41a7aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 88.5
@@ -5200,6 +5208,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7439356793956810134, guid: 232fd27629271a04d85d639d2e1d5994, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7921299878169338823, guid: 232fd27629271a04d85d639d2e1d5994, type: 3}
       propertyPath: m_Name
       value: gHeavy Switch
@@ -9926,6 +9938,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gLight Switch
       objectReference: {fileID: 0}
+    - target: {fileID: 6889086640523631817, guid: f134ee8784075a4428cb871b114e1a4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12566,6 +12582,10 @@ PrefabInstance:
     - target: {fileID: 5373655510044917795, guid: 581033b62205267418d67f28e2d13adf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310422991558070089, guid: 581033b62205267418d67f28e2d13adf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17899,6 +17919,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2105702783632768554, guid: 475fd0e5aa775774b9ab4d8941a2f405, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5377857044423702756, guid: 475fd0e5aa775774b9ab4d8941a2f405, type: 3}
       propertyPath: m_Name
       value: rLightBoxes (1)
@@ -19737,6 +19761,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.236
       objectReference: {fileID: 0}
+    - target: {fileID: 5551348075825638980, guid: 63f464626a4a7284797b970ad208eef2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5997644960889378345, guid: 63f464626a4a7284797b970ad208eef2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 68.26
@@ -21410,6 +21438,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1146464727460916206, guid: 02257ec032930e549a2a7fa5f59bd1b4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4442917935144566824, guid: 02257ec032930e549a2a7fa5f59bd1b4, type: 3}
       propertyPath: m_Name
       value: gHeavyPlate
@@ -21467,6 +21499,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1668324752078771373, guid: 3db000c67fb2cb44d8361370bd25ca72, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4954161221539657544, guid: 3db000c67fb2cb44d8361370bd25ca72, type: 3}
       propertyPath: flipped
       value: 1
@@ -22081,7 +22117,7 @@ Transform:
   m_GameObject: {fileID: 1894826734}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 104.5, y: 0.5, z: -10}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

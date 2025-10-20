@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: af92f9fa5f32d0d42942581df2cb4faa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 720083977935275479
+    second: No hands and uwu_0
+  - first:
+      213: -195124866406005943
+    second: No hands and uwu_1
+  - first:
+      213: 2920981271216089175
+    second: No hands and uwu_2
+  - first:
+      213: 8644512381792381544
+    second: No hands and uwu_3
+  - first:
+      213: 965495587611781010
+    second: No hands and uwu_4
+  - first:
+      213: 7182128438109388327
+    second: No hands and uwu_5
+  - first:
+      213: 4487127227241988427
+    second: No hands and uwu_6
+  - first:
+      213: 7428271272573045007
+    second: No hands and uwu_7
+  - first:
+      213: 6301441305621407983
+    second: No hands and uwu_8
+  - first:
+      213: 7931410090361014215
+    second: No hands and uwu_9
+  - first:
+      213: -3170977596447032481
+    second: No hands and uwu_10
+  - first:
+      213: 1093974390154798996
+    second: No hands and uwu_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: No hands and uwu_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 449
+        width: 114
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d5484110904ef900800000000000000
+      internalID: 720083977935275479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: No hands and uwu_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 449
+        width: 114
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9434603c7f6ca4df0800000000000000
+      internalID: -195124866406005943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: No hands and uwu_2
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 450
+        width: 114
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 758676a7df8698820800000000000000
+      internalID: 2920981271216089175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: No hands and uwu_3
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 448
+        width: 114
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a633de53a77f770800000000000000
+      internalID: 8644512381792381544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: No hands and uwu_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 289
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 297aecb1f11266d00800000000000000
+      internalID: 965495587611781010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: No hands and uwu_5
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 289
+        width: 114
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ebdbc03cb0ca360800000000000000
+      internalID: 7182128438109388327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: No hands and uwu_6
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 289
+        width: 114
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b410eb9707a754e30800000000000000
+      internalID: 4487127227241988427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: No hands and uwu_7
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 289
+        width: 114
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0984f0ad55861760800000000000000
+      internalID: 7428271272573045007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: No hands and uwu_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 79
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe8a9822b77337750800000000000000
+      internalID: 6301441305621407983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: No hands and uwu_9
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 79
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c7caeb6477021e60800000000000000
+      internalID: 7931410090361014215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: No hands and uwu_10
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 79
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b7d053dac6ef3d0800000000000000
+      internalID: -3170977596447032481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: No hands and uwu_11
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 79
+        width: 114
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4972d8669e39e2f00800000000000000
+      internalID: 1093974390154798996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 61e7030a517a4164c8dc7230658529a0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      No hands and uwu_0: 720083977935275479
+      No hands and uwu_1: -195124866406005943
+      No hands and uwu_10: -3170977596447032481
+      No hands and uwu_11: 1093974390154798996
+      No hands and uwu_2: 2920981271216089175
+      No hands and uwu_3: 8644512381792381544
+      No hands and uwu_4: 965495587611781010
+      No hands and uwu_5: 7182128438109388327
+      No hands and uwu_6: 4487127227241988427
+      No hands and uwu_7: 7428271272573045007
+      No hands and uwu_8: 6301441305621407983
+      No hands and uwu_9: 7931410090361014215
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

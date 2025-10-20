@@ -23,9 +23,9 @@ public class PauseMenuManager : MonoBehaviour
             PauseGame();
             ToggleCircularMenu();
         }
-        else
+        else if(isPaused)
         {
-            ToggleCircularMenu();
+            ResumeGame();
         }
     }
 
@@ -47,7 +47,7 @@ public class PauseMenuManager : MonoBehaviour
     public void ExitToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("SplashScreenScene");
+        SceneManager.LoadScene("MainMenu1");
     }
 
     private void PauseGame()

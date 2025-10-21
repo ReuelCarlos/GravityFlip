@@ -21,10 +21,9 @@ public class WinLose : MonoBehaviour
     [SerializeField]private bool timerEnabled = true;
 
     //UI
-    public GameObject loseLaser;
-    public GameObject loseWire;
-    public GameObject loseSpike;
-    public GameObject loseTime;
+    [SerializeField] private TextMeshProUGUI _killedBy;
+
+    public GameObject losePanel;
     public GameObject WIN;
     public GameObject PanelBox;
 
@@ -46,10 +45,7 @@ public class WinLose : MonoBehaviour
         EnableSFX();
         Time.timeScale = 1f;
         previousScoreLevel = nextScoreLevel;
-        loseLaser.SetActive(false);
-        loseWire.SetActive(false);
-        loseSpike.SetActive(false);
-        loseTime.SetActive(false);
+        losePanel.SetActive(false);
         WIN.SetActive(false);
        _timer = 120;
     }
@@ -83,15 +79,16 @@ public class WinLose : MonoBehaviour
     {
         
         if(lastHitHazard == "Spikers"){
-            loseSpike.SetActive(true);
+            _killedBy.text = "Beware of Spikes!";
         }else if(lastHitHazard == "LiveWires"){
-            loseWire.SetActive(true);
+            _killedBy.text = "Fried by Wires!";
         }else if(lastHitHazard == "Laser"){
-            loseLaser.SetActive(true);
+            _killedBy.text = "Blasted by Laser!";
         }else if(lastHitHazard == "NoTime"){
-            loseTime.SetActive(true);
+            _killedBy.text = "Time ran out!";
         }
-
+        
+        losePanel.SetActive(true);
         PanelBox.SetActive(true);
 
 
@@ -115,7 +112,8 @@ public class WinLose : MonoBehaviour
 
     public void ExitLevel()
     {
-        WIN.SetActive(true);    
+        WIN.SetActive(true);   
+        _killedBy.text = "";
         //Move next level
         //Accumulate the score
 
@@ -136,22 +134,6 @@ public class WinLose : MonoBehaviour
         _scoreField.text = score.ToString();
         Time.timeScale = 0f;
         DisableSFX();
-    }
-
-    public void LoseLaser(){
-        loseLaser.SetActive(true);
-    }
-
-    public void LoseWire(){
-        loseWire.SetActive(true);
-    }
-
-    public void LoseSpike(){
-        loseSpike.SetActive(true);
-    }
-
-    public void LoseTime(){
-        loseTime.SetActive(true);
     }
     
     void DisableSFX(){

@@ -8,6 +8,7 @@ public class Collectibles : MonoBehaviour
     public float floatAmplitude = 0.25f;
     public float floatSpeed = 2f;
 
+
     [Header("Audio")]
     public AudioClip pickupSound;      // assign in Inspector
     private AudioSource audioSource;   // internal AudioSource

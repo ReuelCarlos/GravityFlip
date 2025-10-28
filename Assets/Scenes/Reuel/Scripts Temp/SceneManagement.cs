@@ -17,7 +17,7 @@ public class SceneManagement : MonoBehaviour
     }
 
     public void MainMenu(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
     }
 
     public void Pause(){

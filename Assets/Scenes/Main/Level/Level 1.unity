@@ -20496,8 +20496,8 @@ RectTransform:
   m_GameObject: {fileID: 852802529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.46481046, y: 1.1429598, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3834686, y: 0.9429418, z: 0.825}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2128210007}
   - {fileID: 1951607573}
@@ -25631,7 +25631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1513276535
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28419,7 +28419,7 @@ MonoBehaviour:
   m_text: Complete !
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b319e9bf92fcc7419ca4ac21e29fa78, type: 2}
-  m_sharedMaterial: {fileID: -1794732475854478966, guid: 3b319e9bf92fcc7419ca4ac21e29fa78, type: 2}
+  m_sharedMaterial: {fileID: 4287605562453703216, guid: 3b319e9bf92fcc7419ca4ac21e29fa78, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -29982,7 +29982,7 @@ MonoBehaviour:
   m_text: "Level \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b319e9bf92fcc7419ca4ac21e29fa78, type: 2}
-  m_sharedMaterial: {fileID: -1794732475854478966, guid: 3b319e9bf92fcc7419ca4ac21e29fa78, type: 2}
+  m_sharedMaterial: {fileID: 4287605562453703216, guid: 3b319e9bf92fcc7419ca4ac21e29fa78, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

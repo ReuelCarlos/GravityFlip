@@ -92,7 +92,7 @@ public class MenuManager : MonoBehaviour
 
     public void ConfirmTutorialYes()
     {
-        SceneManager.LoadScene("Tutorial"); // Replace with your tutorial scene name
+        SceneManager.LoadScene("Tutorial2"); // Replace with your tutorial scene name
     }
 
     public void ConfirmTutorialNo()
